@@ -10,6 +10,7 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\emergencystretch=1.5em
 \usepackage[round,authoryear]{natbib}
 \usepackage[colorlinks=true,urlcolor=blue!55!black,citecolor=blue!55!black,linkcolor=blue!55!black]{hyperref}
 \setlist[itemize]{nosep,leftmargin=*}
@@ -59,7 +60,7 @@ We therefore separate \emph{identifying} rules from \emph{fitting} them, and rep
 \section{Task, Data and Metrics}\label{sec:task}
 \paragraph{Configurations.} We use the scrubbed 327-file AAC sample released by \citet{zerhoudi2026cliff}. Following their filter, a file is eligible if it has 800--30{,}000 characters, at least ten cleaned lines and at least one regex-detected constraint; 197 files qualify. Eligible files are shuffled with seed 11. Lines are cleaned as in the reference code (headings, fences and lines with fewer than three words removed); each cleaned line is an item.
 
-\paragraph{Budgets.} For configuration $i$ with cleaned lines $\ell_{ij}$ and ratio $\rho\in\{0.5,0.25,0.1\}$, $T_i=\sum_j\max(1,\lfloor|\ell_{ij}|/4\rfloor)$ and $B_i(\rho)=\max(64,\lfloor\rho T_i\rfloor)$; the character limit is $4B_i$.
+\paragraph{Budgets.} For configuration $i$ with cleaned lines $\ell_{ij}$ and ratio $\rho\in\{0.5,0.25,0.1\}$, we set $T_i=\sum_j\max(1,\lfloor|\ell_{ij}|/4\rfloor)$ and $B_i(\rho)=\max(64,\lfloor\rho T_i\rfloor)$; the character limit is $4B_i$.
 
 \paragraph{Reference labels.} L1 is the reference cascade (regex $\to$ embedding prototypes $\to$ gpt-5.4-mini adjudicator), with the unavailable \texttt{octen-embedding-8b} replaced by \texttt{text-embedding-3-large}. L2 is an independent labeler: GPT-6 Sol given the five type definitions, labeling numbered batches of 40 lines, with no regex stage. Neither is a human gold standard; compactors never see either.
 
@@ -77,7 +78,11 @@ $\Rt$ is the metric of prior work; $\Rs$ credits only outputs that respect the b
 
 \paragraph{A motivating failure: protect-all projection.} \linetom{} labeled each line with Jev's argmax type, marked every predicted constraint as exact-retention, and projected the memory into the budget. When protected lines alone exceeded the budget, it returned all constraints and procedures. Because Jev's argmax over-predicts constraints relative to L1 (precision 0.37, recall 0.89), the protected floor was a median 2.8$\times$ the 10\% budget, and raw outputs were a median 1.1/2.7/7.0$\times$ the budget at 50/25/10\%. Its high $\Rt$ comes from rendering constraints first and letting truncation cut the rest.
 
-\paragraph{\sel{}.} Algorithm~\ref{alg:sel} replaces protection by ranking. Each line $s$ receives the key $(\mathrm{tier}(\arg\max p_s),\,-p_s(\textsc{constraint}),\,\mathrm{position})$, with tiers constraint $<$ procedure $<$ belief $<$ preference $<$ episodic. Lines are added in key order whenever they fit the remaining character budget (skipped otherwise, so shorter lines can use the residue) and are emitted in document order. The output always fits; the procedure is deterministic given the probabilities and runs in $O(n\log n)$.
+\paragraph{\sel{}.} Algorithm~\ref{alg:sel} replaces protection by ranking. Each line $s$ receives the sort key
+\[
+\bigl(\mathrm{tier}(\textstyle\arg\max p_s),\; -p_s(\textsc{c}),\; \mathrm{position}\bigr),
+\]
+with tiers constraint $<$ procedure $<$ belief $<$ preference $<$ episodic. Lines are added in key order whenever they fit the remaining character budget (skipped otherwise, so shorter lines can use the residue) and are emitted in document order. The output always fits; the procedure is deterministic given the probabilities and runs in $O(n\log n)$.
 
 \begin{algorithm}[t]
 \caption{\sel{}: budget-feasible line selection}\label{alg:sel}
@@ -104,12 +109,12 @@ Table~\ref{tab:fresh} and Figure~\ref{fig:recall} give the main results. All nin
 
 \begin{table}[t]\centering\small
 \caption{Fresh confirmatory set (60 configurations, 646 L1 constraints). Constraint recall after truncation ($\Rt$) and strict recall ($\Rs$) with valid raw outputs in parentheses. $^\dagger$uses the regex stage of the L1 labeler (label-circular). $^\ddagger$reads evaluation labels (ceiling).}\label{tab:fresh}
-\setlength{\tabcolsep}{3.5pt}
+\setlength{\tabcolsep}{2.7pt}
 \begin{tabular}{@{}lcccccc@{}}\toprule
 & \multicolumn{2}{c}{50\%} & \multicolumn{2}{c}{25\%} & \multicolumn{2}{c}{10\%}\\\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-7}
 Arm & $\Rt$ & $\Rs$ (valid) & $\Rt$ & $\Rs$ (valid) & $\Rt$ & $\Rs$ (valid)\\\midrule
 \sel{} (ours) & \textbf{.916} & \textbf{.916} (60) & \textbf{.751} & \textbf{.751} (60) & \textbf{.544} & \textbf{.544} (60)\\
-Jev argmax + importance, same selector & .888 & .888 (60) & .683 & .683 (60) & .376 & .376 (60)\\
+Jev argmax $+$ importance, same selector & .888 & .888 (60) & .683 & .683 (60) & .376 & .376 (60)\\
 GPT-6 Sol as classifier, same selector & .709 & .709 (60) & .563 & .563 (60) & .373 & .373 (60)\\
 \linetom{} (protect-all) & .875 & .096 (6) & .610 & .030 (2) & .260 & .008 (1)\\
 GPT-6 Sol, direct compaction & .524 & .098 (14) & .285 & .030 (9) & .137 & .009 (24)\\
@@ -173,7 +178,7 @@ Figure~\ref{fig:rounds} shows five sequential 50\% rounds on the fresh set. \sel
 \end{figure}
 
 \subsection{Behavioral consequences}\label{sec:behavior}
-\paragraph{SafetyMed.} We ran the released SafetyMed benchmark of \citet{zerhoudi2026cliff}: 200 clinical scenarios, each paired with FDA boxed-warning and contraindication text and a gold REFUSE/PROCEED decision (71 REFUSE). We kept the upstream probe prompt and 80-whitespace-token budget, used GPT-5.6 Luna as probe and compactor (the reference study used gpt-5.4-mini and Sonnet~4.6), and split label text into sentences and bullet items for the extractive arms. Table~\ref{tab:safetymed} shows that the benchmark discriminates little: the full label passes 92.0\% and LLM compaction 93.5\%, while giving no label (the model then always refuses) passes 35.5\%. \sel{} is nominally the \emph{worst} compressed condition (89.5\%; refusal recall 0.72) and is not better than chance ordering; no difference between compressed conditions survives Holm correction (smallest adjusted $p=0.23$, exact McNemar; \citealp{mcnemar1947}). FDA text is declarative and dense with contraindications, exactly the regime where \S\ref{sec:declarative} shows Jev is weak, and the 200 scenarios share only 26 distinct label texts, so the effective sample is small. We read this as a negative result: \sel{}'s advantage is specific to imperative configuration text.
+\paragraph{SafetyMed.} We ran the released SafetyMed benchmark of \citet{zerhoudi2026cliff}: 200 clinical scenarios, each paired with FDA boxed-warning and con\-traindication text and a gold REFUSE/PROCEED decision (71 REFUSE). We kept the upstream probe prompt and 80-whitespace-token budget, used GPT-5.6 Luna as probe and compactor (the reference study used gpt-5.4-mini and Sonnet~4.6), and split label text into sentences and bullet items for the extractive arms. Table~\ref{tab:safetymed} shows that the benchmark discriminates little: the full label passes 92.0\% and LLM compaction 93.5\%, while giving no label (the model then always refuses) passes 35.5\%. \sel{} is nominally the \emph{worst} compressed condition (89.5\%; refusal recall 0.72) and is not better than chance ordering; no difference between compressed conditions survives Holm correction (smallest adjusted $p=0.23$, exact McNemar; \citealp{mcnemar1947}). FDA text is declarative and dense with contraindications, exactly the regime where \S\ref{sec:declarative} shows Jev is weak, and the 200 scenarios share only 26 distinct label texts, so the effective sample is small. We read this as a negative result: \sel{}'s advantage is specific to imperative configuration text.
 
 \begin{table}[t]\centering\small
 \caption{SafetyMed (200 scenarios; 80-token budget; probe GPT-5.6 Luna). Pass = decision matches gold; REFUSE recall over the 71 REFUSE scenarios.}\label{tab:safetymed}
@@ -209,7 +214,7 @@ In an isolated single-worker run on ten configurations at 50\%, \sel{} took a me
 \paragraph{Threats to validity.} (i) Reference labels are model-produced; two reasonable labelers agree only moderately, and no human adjudication was performed in this study. (ii) The key-token metric is lexical; human raters in the reference study were stricter than the metric. (iii) The idea of budget-feasible selection arose after inspecting the first 50 files; the fresh pre-registered set protects the confirmatory claims but not the exploratory ones. (iv) Fresh-set LLM baselines were run through a subscription endpoint with an assumed reasoning effort; their absolute values may differ from API runs, and GPT-5.6 Luna scored lower on the fresh set (0.494) than on the held-out API run (0.574), which we cannot attribute to set or endpoint. (v) The strict metric assigns zero to invalid outputs; \S\ref{sec:retry} partially addresses fairness to LLMs. (vi) All data come from one public-GitHub sample; closed enterprise configurations may differ.
 
 \section{Reproducibility}
-Code, per-configuration records (including full raw LLM outputs for all new runs), label caches, the pre-registration and figure scripts are in the accompanying repository at the tagged revision \texttt{paper-v2}. The selector is \texttt{src/tom/context/budgeted.py}; the benchmark arm is \texttt{jev\_budget\_lines} in \texttt{src/tom/benchmarks/kt\_faithful.py}. Paid inference for all new experiments cost about \$1.0.
+Code, per-configuration records (including full raw LLM outputs for all new runs), label caches, the pre-registration and figure scripts are in the accompanying repository at the tagged revision \texttt{paper-v2}. The selector is \texttt{src/tom/context/\allowbreak budgeted.py}; the benchmark arm is \texttt{jev\_budget\_lines} in \texttt{src/tom/benchmarks/\allowbreak kt\_faithful.py}. Paid inference for all new experiments cost about \$1.0.
 
 \section{Conclusion}
 Before delegating compaction of an agent's rules to a generative model, it is worth asking a cheaper question per line: \emph{how likely is this a rule?} Ranking lines by that probability and filling the budget exactly preserves several times more rules than LLM compaction at a fraction of the latency, and the measurement lesson generalizes: compaction must be scored on outputs that actually fit.
