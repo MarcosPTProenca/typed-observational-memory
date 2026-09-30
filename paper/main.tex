@@ -5,6 +5,7 @@
 \usepackage{lmodern,microtype}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx,booktabs,tabularx,multirow}
+\usepackage{float}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subcaption}
 \usepackage{enumitem}
@@ -226,7 +227,7 @@ Before delegating compaction of an agent's rules to a generative model, it is wo
 \section{Development-set policy selection}\label{app:dev}
 Table~\ref{tab:dev} lists the nine pre-specified keys on the 20 development configurations ($\Rs$, which equals $\Rt$ for these always-valid selectors). The regex hybrid was excluded from selection because it shares the first stage of the L1 labeler; among the remaining keys, the tier$+p(\textsc{c})$ key had the highest mean and was fixed before the fresh set was evaluated.
 
-\begin{table}[h]\centering\small
+\begin{table}[H]\centering\small
 \caption{Selection keys on the development set ($n=20$, L1).}\label{tab:dev}
 \begin{tabular}{@{}lcccc@{}}\toprule
 Key & 50\% & 25\% & 10\% & mean\\\midrule
@@ -243,8 +244,10 @@ oracle (L1 labels) & 1.000 & .963 & .720 & .894\\\bottomrule
 \end{tabular}
 \end{table}
 
+\clearpage
 \section{Held-out results}\label{app:held}
-\begin{table}[h]\centering\small
+Table~\ref{tab:held} reports every arm on the original 30 held-out configurations, including the structural baselines of \citet{zerhoudi2026cliff} and the API direct-compaction runs summarized in \S\ref{sec:confirm}.
+\begin{table}[H]\centering\small
 \caption{Original held-out set ($n=30$, L1). Direct-compaction rows for GPT-5.x are API runs from the original study; GPT-6 Sol via the subscription endpoint. Structural baselines of \citet{zerhoudi2026cliff} keep whole lines up to the heuristic token budget and can exceed $4B$ characters by a few newline characters, hence their low valid counts; their $\Rs$ is not meaningful and is omitted.}\label{tab:held}
 \setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{@{}lcccccc@{}}\toprule
