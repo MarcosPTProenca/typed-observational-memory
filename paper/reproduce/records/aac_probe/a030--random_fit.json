@@ -1,0 +1,1 @@
+{"idx": 30, "config": "sample-0156-other.md", "rule": "throw new Error(\"Argo is not editable for this zone\");", "arm": "random_fit", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

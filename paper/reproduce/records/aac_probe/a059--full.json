@@ -1,0 +1,1 @@
+{"idx": 59, "config": "sample-0255-agents.md", "rule": "Prereqs: Java 21, Maven 3.9+, Docker.", "arm": "full", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

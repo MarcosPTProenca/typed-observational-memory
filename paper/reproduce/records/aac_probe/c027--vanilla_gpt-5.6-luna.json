@@ -1,0 +1,1 @@
+{"idx": 27, "config": "sample-0162-agents.md", "rule": "Every app and crate must have a root `README.md` with: purpose, responsibilities, interactions, entry points, and a link to `docs/`.", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

@@ -1,0 +1,1 @@
+{"idx": 46, "config": "sample-0306-agents.md", "rule": "When native memory allocation is required inside a function, `NativePlacement` should be passed as a context parameter.", "arm": "full", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

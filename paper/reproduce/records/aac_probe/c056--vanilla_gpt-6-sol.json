@@ -1,0 +1,1 @@
+{"idx": 56, "config": "sample-0133-other.md", "rule": "| `xUnit2017` | Do not use `Contains()` to check if value exists in a set | Warning |", "arm": "vanilla:gpt-6-sol", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

@@ -1,0 +1,1 @@
+{"idx": 105, "config": "sample-0008-other.md", "rule": "If storage can change externally (another tab, server-set cookies), invalidate cache:", "arm": "jevP_tier", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

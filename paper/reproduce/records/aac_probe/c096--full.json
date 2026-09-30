@@ -1,0 +1,1 @@
+{"idx": 96, "config": "sample-0124-claude.md", "rule": "Do not add package names to queries; package information is already shared. For example, use `test resource table`, not `filament 4 test resource table`.", "arm": "full", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

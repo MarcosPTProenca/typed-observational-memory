@@ -1,0 +1,1 @@
+{"idx": 41, "config": "sample-0231-claude.md", "rule": "`TELEGRAM_BOT_TOKEN` - Bot token from BotFather (required)", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

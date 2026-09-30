@@ -1,0 +1,1 @@
+{"idx": 114, "config": "sample-0180-claude.md", "rule": "**CRITICAL**: This project uses **UV** for all Python operations. Never use `python -m`, `pip install`, or `python script.py` directly.", "arm": "full", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

@@ -1,0 +1,1 @@
+{"idx": 78, "config": "sample-0217-claude.md", "rule": "NEVER batch many commits without user review between them", "arm": "jevP_tier", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

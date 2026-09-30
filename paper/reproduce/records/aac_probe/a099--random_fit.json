@@ -1,0 +1,1 @@
+{"idx": 99, "config": "sample-0312-claude.md", "rule": "Every service must have a `healthcheck` block.", "arm": "random_fit", "answer": "UNSPECIFIED", "raw": "UNSPECIFIED", "preserved": false, "verbatim": false}

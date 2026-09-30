@@ -1,0 +1,1 @@
+{"idx": 117, "config": "sample-0098-agents.md", "rule": "Handle filesystem edge cases (deleted files, permission errors)", "arm": "vanilla:gpt-5.6-luna", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": false}

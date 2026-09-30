@@ -1,0 +1,1 @@
+{"idx": 107, "config": "sample-0026-copilot.md", "rule": "Always include full **type hints** (functions, methods, public attrs, constants).", "arm": "vanilla:gpt-6-sol", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

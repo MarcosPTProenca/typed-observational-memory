@@ -1,0 +1,1 @@
+{"idx": 25, "config": "sample-0267-claude.md", "rule": "New agents in the PM Copilot flow must be wired in `maf/orchestration/handoff_workflow.py`", "arm": "tom_jev_lines", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

@@ -1,0 +1,1 @@
+{"idx": 72, "config": "sample-0104-claude.md", "rule": "Only after curl verification succeeds.", "arm": "vanilla:gpt-5.6-luna", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

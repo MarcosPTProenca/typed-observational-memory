@@ -1,0 +1,1 @@
+{"idx": 17, "config": "sample-0015-agents.md", "rule": "Rotate any leaked credentials promptly; prefer per-env keys.", "arm": "vanilla:gpt-5.6-luna", "answer": "UNSPECIFIED", "raw": "UNSPECIFIED", "preserved": false, "verbatim": false}

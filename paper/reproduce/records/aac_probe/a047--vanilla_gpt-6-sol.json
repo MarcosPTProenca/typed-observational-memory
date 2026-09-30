@@ -1,0 +1,1 @@
+{"idx": 47, "config": "sample-0260-claude.md", "rule": "IMPORTANT: After any changes, always run `./gradlew clean test` in a corresponding subproject", "arm": "vanilla:gpt-6-sol", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": false, "verbatim": false}

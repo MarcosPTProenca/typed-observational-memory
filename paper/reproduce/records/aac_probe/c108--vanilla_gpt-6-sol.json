@@ -1,0 +1,1 @@
+{"idx": 108, "config": "sample-0221-claude.md", "rule": "PRs must include: purpose, scope, key changes, how-to-test, and linked issues.", "arm": "vanilla:gpt-6-sol", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

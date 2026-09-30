@@ -1,0 +1,1 @@
+{"idx": 48, "config": "sample-0260-claude.md", "rule": "Each subproject should use a separate database schema. It should be defined in subproject gradle.properties, application.yml (app and test) and <REDACTED_USER> annotation in AbstractContextTest", "arm": "jevP_tier", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

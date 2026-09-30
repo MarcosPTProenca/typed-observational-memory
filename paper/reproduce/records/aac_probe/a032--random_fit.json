@@ -1,0 +1,1 @@
+{"idx": 32, "config": "sample-0080-other.md", "rule": "Never use bare `except:` or `except Exception:` without re-raising", "arm": "random_fit", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

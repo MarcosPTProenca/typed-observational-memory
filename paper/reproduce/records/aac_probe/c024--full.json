@@ -1,0 +1,1 @@
+{"idx": 24, "config": "sample-0262-claude.md", "rule": "Files in `~/` that are managed by chezmoi should NEVER be edited directly.", "arm": "full", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

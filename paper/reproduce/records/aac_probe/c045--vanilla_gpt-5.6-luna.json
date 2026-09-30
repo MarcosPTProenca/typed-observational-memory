@@ -1,0 +1,1 @@
+{"idx": 45, "config": "sample-0306-agents.md", "rule": "Every `public` class, function and property must have a KDoc.", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

@@ -1,0 +1,1 @@
+{"idx": 54, "config": "sample-0282-agents.md", "rule": "if (!string.IsNullOrWhiteSpace(body))", "arm": "full", "answer": "UNSPECIFIED", "raw": "UNSPECIFIED", "preserved": true, "verbatim": true}

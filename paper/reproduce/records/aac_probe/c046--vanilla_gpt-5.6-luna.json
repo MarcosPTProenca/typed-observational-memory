@@ -1,0 +1,1 @@
+{"idx": 46, "config": "sample-0306-agents.md", "rule": "When native memory allocation is required inside a function, `NativePlacement` should be passed as a context parameter.", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

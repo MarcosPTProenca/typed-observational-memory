@@ -1,0 +1,1 @@
+{"idx": 102, "config": "sample-0130-other.md", "rule": "Avoid mixing blocking and async code", "arm": "full", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

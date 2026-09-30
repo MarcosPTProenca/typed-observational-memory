@@ -1,0 +1,1 @@
+{"idx": 95, "config": "sample-0197-agents.md", "rule": "Treat `.llm/` contents as disposable working state, not as tracked project source.", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

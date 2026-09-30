@@ -1,0 +1,1 @@
+{"idx": 90, "config": "sample-0016-agents.md", "rule": "Deterministic behavior: no unbounded loops; every wait must have a timeout/deadline.", "arm": "vanilla:gpt-6-sol", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

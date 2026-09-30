@@ -1,0 +1,1 @@
+{"idx": 95, "config": "sample-0197-agents.md", "rule": "Treat `.llm/` contents as disposable working state, not as tracked project source.", "arm": "tom_jev_lines", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": false, "verbatim": false}

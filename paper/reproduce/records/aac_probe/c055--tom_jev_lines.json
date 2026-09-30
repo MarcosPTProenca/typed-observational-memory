@@ -1,0 +1,1 @@
+{"idx": 55, "config": "sample-0133-other.md", "rule": "4. **Do not return `void` from async test methods.** Return `Task` or `ValueTask`. `async void` tests report false success because xUnit cannot observe the async completion.", "arm": "tom_jev_lines", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

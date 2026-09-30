@@ -1,0 +1,1 @@
+{"idx": 32, "config": "sample-0080-other.md", "rule": "Never use bare `except:` or `except Exception:` without re-raising", "arm": "jevP_tier", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

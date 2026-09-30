@@ -1,0 +1,1 @@
+{"idx": 15, "config": "sample-0286-agents.md", "rule": "**Treat Warnings As Errors**: Enabled (`TreatWarningsAsErrors=true`)", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": false}

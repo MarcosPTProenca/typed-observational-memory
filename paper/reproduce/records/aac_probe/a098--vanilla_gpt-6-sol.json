@@ -1,0 +1,1 @@
+{"idx": 98, "config": "sample-0312-claude.md", "rule": "2. **Never commit `.env` or `servicebus/Config.json`** \u2014 both contain local configuration and are git-ignored.", "arm": "vanilla:gpt-6-sol", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": false}

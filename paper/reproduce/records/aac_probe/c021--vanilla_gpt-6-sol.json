@@ -1,0 +1,1 @@
+{"idx": 21, "config": "sample-0095-agents.md", "rule": "Do not add new external dependencies unless strictly required.", "arm": "vanilla:gpt-6-sol", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

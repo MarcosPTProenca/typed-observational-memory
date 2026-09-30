@@ -1,0 +1,1 @@
+{"idx": 21, "config": "sample-0095-agents.md", "rule": "Do not add new external dependencies unless strictly required.", "arm": "full", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

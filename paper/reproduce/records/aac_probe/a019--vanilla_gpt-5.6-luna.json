@@ -1,0 +1,1 @@
+{"idx": 19, "config": "sample-0218-claude.md", "rule": "2. **CRITICAL: Keep total under 20-30 lines of instructions** \u2014 move detailed docs to `.claude/steering/`", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

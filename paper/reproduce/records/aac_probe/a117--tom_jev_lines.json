@@ -1,0 +1,1 @@
+{"idx": 117, "config": "sample-0098-agents.md", "rule": "Handle filesystem edge cases (deleted files, permission errors)", "arm": "tom_jev_lines", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": false, "verbatim": false}

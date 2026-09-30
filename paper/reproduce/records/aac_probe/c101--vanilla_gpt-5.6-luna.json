@@ -1,0 +1,1 @@
+{"idx": 101, "config": "sample-0060-other.md", "rule": "Requires `cacheComponents: true` in `next.config.ts`.", "arm": "vanilla:gpt-5.6-luna", "answer": "UNSPECIFIED", "raw": "UNSPECIFIED", "preserved": false, "verbatim": false}

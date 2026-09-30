@@ -1,0 +1,1 @@
+{"idx": 52, "config": "sample-0198-agents.md", "rule": "Shared styling lives in `assets/css/theme-grafioschtrader.css`, pass-through files belong in `static/`, and Hugo-generated `public/` / `resources/` should only be refreshed via `hugo --cleanDestinationDir`.", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

@@ -1,0 +1,1 @@
+{"idx": 80, "config": "sample-0070-agents.md", "rule": "When posting Beads comments, the first non-empty line must be one of: `Ready for review:`, `LGTM`, `Changes requested:`; include a brief summary and validation.", "arm": "jevP_tier", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

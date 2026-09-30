@@ -1,0 +1,1 @@
+{"idx": 66, "config": "sample-0311-claude.md", "rule": "When one of the applications is started for testing, make sure it's stopped once finished.", "arm": "full", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

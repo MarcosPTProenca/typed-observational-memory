@@ -1,0 +1,1 @@
+{"idx": 45, "config": "sample-0306-agents.md", "rule": "Every `public` class, function and property must have a KDoc.", "arm": "full", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

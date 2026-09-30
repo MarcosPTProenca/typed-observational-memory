@@ -1,0 +1,1 @@
+{"idx": 85, "config": "sample-0172-agents.md", "rule": "Always run the check suite before marking a task as done:", "arm": "vanilla:gpt-6-sol", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

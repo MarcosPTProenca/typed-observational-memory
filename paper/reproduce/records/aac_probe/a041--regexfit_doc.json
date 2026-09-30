@@ -1,0 +1,1 @@
+{"idx": 41, "config": "sample-0231-claude.md", "rule": "`TELEGRAM_BOT_TOKEN` - Bot token from BotFather (required)", "arm": "regexfit_doc", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

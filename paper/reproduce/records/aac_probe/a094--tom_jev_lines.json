@@ -1,0 +1,1 @@
+{"idx": 94, "config": "sample-0197-agents.md", "rule": "Use explicit paths when staging. Never use broad staging commands that can capture other agents\u2019 work.", "arm": "tom_jev_lines", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": false, "verbatim": false}

@@ -1,0 +1,1 @@
+{"idx": 15, "config": "sample-0286-agents.md", "rule": "**Treat Warnings As Errors**: Enabled (`TreatWarningsAsErrors=true`)", "arm": "regexfit_doc", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

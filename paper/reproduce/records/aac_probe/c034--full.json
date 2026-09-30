@@ -1,0 +1,1 @@
+{"idx": 34, "config": "sample-0075-agents.md", "rule": "Stop hook \u306e\u300cPreview Required\u300d\u8b66\u544a\u304c\u51fa\u3066\u3082 `preview_start` \u3092\u547c\u3070\u306a\u3044\u3053\u3068", "arm": "full", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

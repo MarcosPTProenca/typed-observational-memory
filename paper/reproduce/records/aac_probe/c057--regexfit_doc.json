@@ -1,0 +1,1 @@
+{"idx": 57, "config": "sample-0136-other.md", "rule": "<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>", "arm": "regexfit_doc", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

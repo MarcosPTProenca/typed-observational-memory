@@ -1,0 +1,1 @@
+{"idx": 23, "config": "sample-0262-claude.md", "rule": "| --robot / --json | Machine-readable JSON output (required!) |", "arm": "vanilla:gpt-5.6-luna", "answer": "UNSPECIFIED", "raw": "UNSPECIFIED", "preserved": false, "verbatim": false}

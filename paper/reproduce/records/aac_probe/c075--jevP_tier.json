@@ -1,0 +1,1 @@
+{"idx": 75, "config": "sample-0051-system-prompt.md", "rule": "Don't process refunds over $100 (escalate instead)", "arm": "jevP_tier", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

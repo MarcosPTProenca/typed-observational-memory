@@ -1,0 +1,1 @@
+{"idx": 113, "config": "sample-0210-claude.md", "rule": "Keep only `tracing::error!` and `tracing::warn!` for critical issues", "arm": "full", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

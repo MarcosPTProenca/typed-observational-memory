@@ -1,0 +1,1 @@
+{"idx": 86, "config": "sample-0172-agents.md", "rule": "Never implement something as just a placeholder or a method definition containing just `// TODO`, unless specifically asked to take an iterative approach.", "arm": "vanilla:gpt-5.6-luna", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

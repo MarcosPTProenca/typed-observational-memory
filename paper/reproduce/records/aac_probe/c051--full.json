@@ -1,0 +1,1 @@
+{"idx": 51, "config": "sample-0198-agents.md", "rule": "`content/` holds bilingual topics; keep `_index.de.md` and `_index.en.md` siblings with mirrored front matter so sidebar weights stay aligned.", "arm": "full", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": true, "verbatim": true}

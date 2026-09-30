@@ -1,0 +1,1 @@
+{"idx": 88, "config": "sample-0182-claude.md", "rule": "`JWT_SECRET` - JWT secret for session management (minimum 32 characters)", "arm": "jevP_tier", "answer": "NOT_PERMITTED", "raw": "NOT_PERMITTED", "preserved": true, "verbatim": true}

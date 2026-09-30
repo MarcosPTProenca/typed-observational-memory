@@ -1,0 +1,1 @@
+{"idx": 113, "config": "sample-0210-claude.md", "rule": "Keep only `tracing::error!` and `tracing::warn!` for critical issues", "arm": "vanilla:gpt-6-sol", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

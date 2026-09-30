@@ -1,0 +1,1 @@
+{"idx": 79, "config": "sample-0070-agents.md", "rule": "If a bead references a spec/PRD (for example `specs/2025-12-18_todos.md`), read it before changing code.", "arm": "regexfit_doc", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}

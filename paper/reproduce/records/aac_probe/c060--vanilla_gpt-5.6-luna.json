@@ -1,0 +1,1 @@
+{"idx": 60, "config": "sample-0255-agents.md", "rule": "Build one service and required deps: `mvn -pl user-service -am package`", "arm": "vanilla:gpt-5.6-luna", "answer": "PERMITTED", "raw": "PERMITTED", "preserved": false, "verbatim": false}
