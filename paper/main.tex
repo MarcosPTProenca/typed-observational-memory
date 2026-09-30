@@ -218,12 +218,17 @@ In an isolated single-worker run on ten configurations at 50\%, \sel{} took a me
 Code, per-configuration records (including full raw LLM outputs for all new runs), label caches, the pre-registration and figure scripts are in the accompanying repository at the tagged revision \texttt{paper-v2}. The selector is \texttt{src/tom/context/\allowbreak budgeted.py}; the benchmark arm is \texttt{jev\_budget\_lines} in \texttt{src/tom/benchmarks/\allowbreak kt\_faithful.py}. Paid inference for all new experiments cost about \$1.0.
 
 \section{Conclusion}
-Before delegating compaction of an agent's rules to a generative model, it is worth asking a cheaper question per line: \emph{how likely is this a rule?} Ranking lines by that probability and filling the budget exactly preserves several times more rules than LLM compaction at a fraction of the latency, and the measurement lesson generalizes: compaction must be scored on outputs that actually fit.
+Before delegating compaction of an agent's rules to a generative model, it is worth asking a cheaper question per line: \emph{how likely is this a rule?} \sel{} ranks lines by that probability and fills the budget exactly, so every output is feasible by construction. On 60 pre-registered, previously unused configurations this preserves 0.92/0.75/0.54 of reference rules at 50/25/10\% budgets, several times more than direct compaction by GPT-5.6 Luna, GPT-6 Luna and GPT-6 Sol (at most 0.12), at 0.88\,s and roughly \$0.0015 per configuration. The advantage is not an artifact of lenient scoring: it holds under an independent labeler, under the original truncation metric, and against retry-with-feedback, and it carries downstream---rules the selector keeps are obeyed 93.7\% of the time against 53.1\% for rules it drops.
+
+Two lessons generalize beyond this system. First, a hard budget is a \emph{selection} problem, not a generation problem: a model that emits whole lines can guarantee feasibility that a paraphrasing model cannot, and the cheap per-line signal that decides what to keep need not be a full language model. Second, compaction must be scored on outputs that actually fit; a truncation-tolerant metric rewards ordering rather than compression and flatters methods that overshoot the budget.
+
+The method is deliberately narrow. It selects but never rewrites, so it cannot shorten a single over-long rule, and it counts rules without weighting their severity. Its classifier is strong on the imperative phrasing typical of agent configurations but weak on declarative text (32\% recall), so clinical, legal and financial deployments need a dedicated safety classifier alongside it; the excluded-probability-mass signal offers a cheap ``ask a human'' trigger in the meantime. Natural next steps are human-adjudicated reference labels, a severity-weighted objective, and a hybrid that routes long rules to a generative summarizer while the selector guarantees the budget. We release the code, records and pre-registration so these can be tested directly.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
 
 \appendix
+\clearpage
 \section{Development-set policy selection}\label{app:dev}
 Table~\ref{tab:dev} lists the nine pre-specified keys on the 20 development configurations ($\Rs$, which equals $\Rt$ for these always-valid selectors). The regex hybrid was excluded from selection because it shares the first stage of the L1 labeler; among the remaining keys, the tier$+p(\textsc{c})$ key had the highest mean and was fixed before the fresh set was evaluated.
 
