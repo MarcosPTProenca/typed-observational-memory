@@ -13,6 +13,7 @@
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \emergencystretch=1.5em
 \usepackage[round,authoryear]{natbib}
+\usepackage{parskip}
 \usepackage[colorlinks=true,urlcolor=blue!55!black,citecolor=blue!55!black,linkcolor=blue!55!black]{hyperref}
 \setlist[itemize]{nosep,leftmargin=*}
 \setlist[enumerate]{nosep,leftmargin=*}
@@ -30,6 +31,7 @@
 \maketitle
 
 \begin{abstract}
+\noindent
 Agent configuration files such as \texttt{AGENTS.md} or \texttt{CLAUDE.md} mix binding rules with procedures and background prose. When such a file must be compacted into a token budget, the rules should survive. We study a generation-free alternative to LLM compaction, \sel{}: a structured-decision model (Jev) assigns each line a probability distribution over five knowledge types, and a greedy selector fills a hard character budget by type tier and constraint probability, emitting whole lines in document order. On 60 previously unused agent configurations, under a pre-registered protocol, \sel{} retains 0.92/0.75/0.54 of reference rules at 50/25/10\% budgets with every output within budget, whereas direct compaction by GPT-5.6 Luna, GPT-6 Luna and GPT-6 Sol retains at most 0.12 under the same constraint (at most 0.52 even when their overlong outputs are truncated before scoring). The gains exceed a zero-cost lexical classifier by 0.15--0.26 and a frontier LLM used as the line classifier by 0.17--0.21, and they persist under an independent reference labeler whose agreement with the original is only $\kappa=0.59$. We further show that the truncation-scored protocol used in prior work rewards output \emph{ordering} rather than compression, report chance, lexical and oracle anchors, and evaluate behavioral consequences on rule probes and on a released medical-safety benchmark. The advantage does not transfer to declarative text: \sel{} recognizes only 32\% of declaratively phrased rules and is no better than chance selection on the medical benchmark, which we identify as its main limitation.
 \end{abstract}
 
@@ -79,11 +81,16 @@ $\Rt$ is the metric of prior work; $\Rs$ credits only outputs that respect the b
 
 \paragraph{A motivating failure: protect-all projection.} \linetom{} labeled each line with Jev's argmax type, marked every predicted constraint as exact-retention, and projected the memory into the budget. When protected lines alone exceeded the budget, it returned all constraints and procedures. Because Jev's argmax over-predicts constraints relative to L1 (precision 0.37, recall 0.89), the protected floor was a median 2.8$\times$ the 10\% budget, and raw outputs were a median 1.1/2.7/7.0$\times$ the budget at 50/25/10\%. Its high $\Rt$ comes from rendering constraints first and letting truncation cut the rest.
 
-\paragraph{\sel{}.} Algorithm~\ref{alg:sel} replaces protection by ranking. Each line $s$ receives the sort key
+\paragraph{\sel{}.} Algorithm~\ref{alg:sel} replaces protection by ranking (Figure~\ref{fig:method}). Each line $s$ receives the sort key
 \[
 \bigl(\mathrm{tier}(\textstyle\arg\max p_s),\; -p_s(\textsc{c}),\; \mathrm{position}\bigr),
 \]
 with tiers constraint $<$ procedure $<$ belief $<$ preference $<$ episodic. Lines are added in key order whenever they fit the remaining character budget (skipped otherwise, so shorter lines can use the residue) and are emitted in document order. The output always fits; the procedure is deterministic given the probabilities and runs in $O(n\log n)$.
+
+\begin{figure*}[t]\centering
+\includegraphics[width=\textwidth]{figures/method_overview.pdf}
+\caption{\sel{} in four steps. Jev assigns each line a type distribution with a single non-generative \texttt{Choice} call; lines are ranked by type tier then constraint probability $p_{\textsc{c}}$ and greedily packed into the character budget $L=4B$; the kept lines are re-emitted verbatim in document order, so the output is feasible by construction. A generative LLM baseline instead rewrites the file and routinely overshoots the budget (median $1.1$--$7.0\times$).}\label{fig:method}
+\end{figure*}
 
 \begin{algorithm}[t]
 \caption{\sel{}: budget-feasible line selection}\label{alg:sel}
@@ -249,7 +256,6 @@ oracle (L1 labels) & 1.000 & .963 & .720 & .894\\\bottomrule
 \end{tabular}
 \end{table}
 
-\clearpage
 \section{Held-out results}\label{app:held}
 Table~\ref{tab:held} reports every arm on the original 30 held-out configurations, including the structural baselines of \citet{zerhoudi2026cliff} and the API direct-compaction runs summarized in \S\ref{sec:confirm}.
 \begin{table}[H]\centering\small
