@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from typing import Any, Protocol
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from tom.metrics import CostRates
 from tom.models import Importance, KnowledgeType, RetentionPolicy
@@ -65,6 +65,8 @@ class ItemLabels(BaseModel):
     retention: RetentionPolicy
     importance: Importance
     confidence: float
+    # Full Choice distribution over knowledge types; empty when the provider omits it.
+    type_probabilities: dict[str, float] = Field(default_factory=dict)
 
 
 class _Client(Protocol):
@@ -113,7 +115,21 @@ class JevClassifier:
             retention=RetentionPolicy(response.choices["retention"].choice),
             importance=Importance(response.choices["importance"].choice),
             confidence=float(response.nouls["confidence"].noul),
+            type_probabilities=_probabilities(response.choices["knowledge_type"]),
         )
+
+    async def type_distribution(self, content: str) -> dict[str, float]:
+        """One knowledge-type Choice only: ~30% fewer input tokens than ``classify_labels``."""
+        from typesafe_sdk import Choice  # type: ignore[import-not-found]
+
+        question = Choice(
+            instructions="What kind of knowledge does this information represent?",
+            criteria={k.value: v for k, v in _KNOWLEDGE_TYPE_CRITERIA.items()},
+        )
+        answer = (await self._invoke(content, {"knowledge_type": question})).choices[
+            "knowledge_type"
+        ]
+        return _probabilities(answer) or {answer.choice: 1.0}
 
     async def confirm_critical(self, content: str, *, instructions: str = SAFETY_GATE_INSTRUCTIONS) -> float:
         from typesafe_sdk import Noul  # type: ignore[import-not-found]
@@ -159,3 +175,7 @@ class JevClassifier:
         self.last_input_tokens = 0
         self.last_output_tokens = 0
         self.last_calls = 0
+
+
+def _probabilities(answer: Any) -> dict[str, float]:
+    return {str(k): float(v) for k, v in (getattr(answer, "probabilities", None) or {}).items()}

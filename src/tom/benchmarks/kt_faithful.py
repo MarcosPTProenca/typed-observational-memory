@@ -28,6 +28,7 @@ from knowledge_triage.operators import aggressive_prune, hierarchical_summarize,
 
 from tom.context import ContextProjector, ProjectionPolicy, Renderer
 from tom.context.budget import UnsafeContextBudget
+from tom.context.budgeted import select_lines
 from tom.observer import JevLineObserver, JevRelabeler, TypedObserver
 from tom.providers import JevClassifier, OpenAIStructuredLLM
 
@@ -108,6 +109,25 @@ def tom_compactor(
             meter.charge(model, metrics.observer_input_tokens, metrics.observer_output_tokens)
         meter.spent += metrics.jev_input_tokens * JEV_PER_MILLION / 1e6
         return output, meter.spent - before
+
+    return compact
+
+
+def jev_budget_compactor(meter: Meter, client: Any = None) -> Compactor:
+    """One Jev type Choice per line, then hard-budget selection (always fits budget * 4 chars)."""
+
+    async def compact(text: str, budget: int) -> tuple[str, float]:
+        classifier = JevClassifier(client)
+        lines = [line for line in text.splitlines() if line.strip()]
+        try:
+            distributions = await asyncio.gather(
+                *(classifier.type_distribution(line) for line in lines)
+            )
+        finally:
+            await classifier.aclose()
+        cost = classifier.last_input_tokens * JEV_PER_MILLION / 1e6
+        meter.spent += cost
+        return select_lines(lines, list(distributions), budget * 4), cost
 
     return compact
 
@@ -441,6 +461,8 @@ def _arms(client: Any, meter: Meter, names: list[str]) -> dict[str, Compactor]:
             arms[name] = tom_compactor(client, model, meter, jev="jev" in kind, budgeted=True)
         elif kind == "tom_jev_lines":
             arms[name] = tom_compactor(client, None, meter, jev=True, budgeted=True, lines=True)
+        elif kind == "jev_budget_lines":
+            arms[name] = jev_budget_compactor(meter)
         else:
             raise ValueError(f"unknown arm {name}")
     return arms
