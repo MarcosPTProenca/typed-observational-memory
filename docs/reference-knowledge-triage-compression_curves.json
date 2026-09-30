@@ -1,0 +1,249 @@
+{
+  "name": "v4_compression_curves",
+  "n": 20,
+  "ratios": [
+    0.5,
+    0.25,
+    0.1
+  ],
+  "per_ratio": {
+    "0.5": {
+      "strategies": {
+        "TypeCompact_cascade": {
+          "per_type_mean": {
+            "constraint": 1.0,
+            "procedural": 0.9247,
+            "belief": 0.4933,
+            "preference": 0.4474,
+            "episodic": 0.8743
+          },
+          "overall_macro": 0.7479,
+          "elapsed_mean": 0.0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "tokens_total": 0,
+          "n_completed": 20
+        },
+        "vanilla__openai:gpt-5.4-nano": {
+          "per_type_mean": {
+            "constraint": 0.5174,
+            "procedural": 0.8026,
+            "belief": 0.744,
+            "preference": 0.5893,
+            "episodic": 0.7914
+          },
+          "overall_macro": 0.6889,
+          "elapsed_mean": 9.88,
+          "tokens_in": 29734,
+          "tokens_out": 26454,
+          "tokens_total": 56188,
+          "n_completed": 20
+        },
+        "vanilla__openai:gpt-5.4-mini": {
+          "per_type_mean": {
+            "constraint": 0.4807,
+            "procedural": 0.7736,
+            "belief": 0.7306,
+            "preference": 0.6311,
+            "episodic": 0.8048
+          },
+          "overall_macro": 0.6842,
+          "elapsed_mean": 7.316,
+          "tokens_in": 29734,
+          "tokens_out": 27417,
+          "tokens_total": 57151,
+          "n_completed": 20
+        },
+        "vanilla__claude_code:claude-sonnet-4-6": {
+          "per_type_mean": {
+            "constraint": 0.5304,
+            "procedural": 0.8288,
+            "belief": 0.7008,
+            "preference": 0.6414,
+            "episodic": 0.94
+          },
+          "overall_macro": 0.7283,
+          "elapsed_mean": 73.852,
+          "tokens_in": 32232,
+          "tokens_out": 15525,
+          "tokens_total": 47757,
+          "n_completed": 20
+        },
+        "vanilla__claude_code:claude-opus-4-7": {
+          "per_type_mean": {
+            "constraint": 0.4468,
+            "procedural": 0.8077,
+            "belief": 0.7574,
+            "preference": 0.6333,
+            "episodic": 0.9324
+          },
+          "overall_macro": 0.7155,
+          "elapsed_mean": 31.055,
+          "tokens_in": 32232,
+          "tokens_out": 17824,
+          "tokens_total": 50056,
+          "n_completed": 20
+        }
+      }
+    },
+    "0.25": {
+      "strategies": {
+        "TypeCompact_cascade": {
+          "per_type_mean": {
+            "constraint": 0.9516,
+            "procedural": 0.7145,
+            "belief": 0.3016,
+            "preference": 0.2742,
+            "episodic": 0.631
+          },
+          "overall_macro": 0.5746,
+          "elapsed_mean": 0.0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "tokens_total": 0,
+          "n_completed": 20
+        },
+        "vanilla__openai:gpt-5.4-nano": {
+          "per_type_mean": {
+            "constraint": 0.2588,
+            "procedural": 0.6014,
+            "belief": 0.5417,
+            "preference": 0.3935,
+            "episodic": 0.7229
+          },
+          "overall_macro": 0.5037,
+          "elapsed_mean": 9.318,
+          "tokens_in": 29722,
+          "tokens_out": 23227,
+          "tokens_total": 52949,
+          "n_completed": 20
+        },
+        "vanilla__openai:gpt-5.4-mini": {
+          "per_type_mean": {
+            "constraint": 0.2872,
+            "procedural": 0.6245,
+            "belief": 0.4871,
+            "preference": 0.3595,
+            "episodic": 0.7095
+          },
+          "overall_macro": 0.4936,
+          "elapsed_mean": 7.548,
+          "tokens_in": 29722,
+          "tokens_out": 26464,
+          "tokens_total": 56186,
+          "n_completed": 20
+        },
+        "vanilla__claude_code:claude-sonnet-4-6": {
+          "per_type_mean": {
+            "constraint": 0.3923,
+            "procedural": 0.6533,
+            "belief": 0.4041,
+            "preference": 0.4677,
+            "episodic": 0.6152
+          },
+          "overall_macro": 0.5065,
+          "elapsed_mean": 166.205,
+          "tokens_in": 32229,
+          "tokens_out": 9438,
+          "tokens_total": 41667,
+          "n_completed": 20
+        },
+        "vanilla__claude_code:claude-opus-4-7": {
+          "per_type_mean": {
+            "constraint": 0.2598,
+            "procedural": 0.6781,
+            "belief": 0.5082,
+            "preference": 0.4279,
+            "episodic": 0.6781
+          },
+          "overall_macro": 0.5104,
+          "elapsed_mean": 35.645,
+          "tokens_in": 32229,
+          "tokens_out": 10993,
+          "tokens_total": 43222,
+          "n_completed": 20
+        }
+      }
+    },
+    "0.1": {
+      "strategies": {
+        "TypeCompact_cascade": {
+          "per_type_mean": {
+            "constraint": 0.8019,
+            "procedural": 0.472,
+            "belief": 0.1372,
+            "preference": 0.1517,
+            "episodic": 0.3343
+          },
+          "overall_macro": 0.3794,
+          "elapsed_mean": 0.0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "tokens_total": 0,
+          "n_completed": 20
+        },
+        "vanilla__openai:gpt-5.4-nano": {
+          "per_type_mean": {
+            "constraint": 0.1428,
+            "procedural": 0.4338,
+            "belief": 0.2685,
+            "preference": 0.2422,
+            "episodic": 0.5486
+          },
+          "overall_macro": 0.3272,
+          "elapsed_mean": 5.589,
+          "tokens_in": 29722,
+          "tokens_out": 13707,
+          "tokens_total": 43429,
+          "n_completed": 20
+        },
+        "vanilla__openai:gpt-5.4-mini": {
+          "per_type_mean": {
+            "constraint": 0.1624,
+            "procedural": 0.4654,
+            "belief": 0.252,
+            "preference": 0.2302,
+            "episodic": 0.501
+          },
+          "overall_macro": 0.3222,
+          "elapsed_mean": 5.07,
+          "tokens_in": 29722,
+          "tokens_out": 16064,
+          "tokens_total": 45786,
+          "n_completed": 20
+        },
+        "vanilla__claude_code:claude-sonnet-4-6": {
+          "per_type_mean": {
+            "constraint": 0.2388,
+            "procedural": 0.5384,
+            "belief": 0.1792,
+            "preference": 0.239,
+            "episodic": 0.3238
+          },
+          "overall_macro": 0.3038,
+          "elapsed_mean": 420.295,
+          "tokens_in": 32227,
+          "tokens_out": 3808,
+          "tokens_total": 36035,
+          "n_completed": 20
+        },
+        "vanilla__claude_code:claude-opus-4-7": {
+          "per_type_mean": {
+            "constraint": 0.1663,
+            "procedural": 0.516,
+            "belief": 0.2429,
+            "preference": 0.2261,
+            "episodic": 0.4
+          },
+          "overall_macro": 0.3103,
+          "elapsed_mean": 22.788,
+          "tokens_in": 32227,
+          "tokens_out": 4985,
+          "tokens_total": 37212,
+          "n_completed": 20
+        }
+      }
+    }
+  },
+  "status": "ok"
+}

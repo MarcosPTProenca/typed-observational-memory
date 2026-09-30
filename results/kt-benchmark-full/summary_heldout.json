@@ -1,0 +1,695 @@
+{
+  "n_configs": 30,
+  "excluded": [
+    "sample-0012-agents.md",
+    "sample-0021-copilot.md",
+    "sample-0023-copilot.md",
+    "sample-0040-claude.md",
+    "sample-0050-system-prompt.md",
+    "sample-0081-other.md",
+    "sample-0086-other.md",
+    "sample-0091-agents.md",
+    "sample-0127-claude.md",
+    "sample-0128-claude.md",
+    "sample-0139-other.md",
+    "sample-0178-agents.md",
+    "sample-0187-claude.md",
+    "sample-0216-claude.md",
+    "sample-0223-claude.md",
+    "sample-0252-agents.md",
+    "sample-0271-other.md",
+    "sample-0284-agents.md",
+    "sample-0298-other.md",
+    "sample-0309-agents.md"
+  ],
+  "per_ratio": {
+    "0.5": {
+      "aggressive_pruning": {
+        "per_type_mean": {
+          "constraint": 0.4877,
+          "procedural": 0.751,
+          "belief": 0.6233,
+          "preference": 0.727,
+          "episodic": 0.6868
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.8,
+        "median_output_to_budget": 1.016,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0012,
+        "latency_s_median": 0.001
+      },
+      "hierarchical_truncation": {
+        "per_type_mean": {
+          "constraint": 0.4545,
+          "procedural": 0.7783,
+          "belief": 0.7424,
+          "preference": 0.6545,
+          "episodic": 0.7692
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.7333,
+        "median_output_to_budget": 1.03,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0013,
+        "latency_s_median": 0.001
+      },
+      "temporal_window": {
+        "per_type_mean": {
+          "constraint": 0.5252,
+          "procedural": 0.8563,
+          "belief": 0.658,
+          "preference": 0.7278,
+          "episodic": 0.8352
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9,
+        "median_output_to_budget": 1.033,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0012,
+        "latency_s_median": 0.001
+      },
+      "tom_budget:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.7665,
+          "procedural": 0.8105,
+          "belief": 0.5702,
+          "preference": 0.6699,
+          "episodic": 0.6538
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.8333,
+        "median_output_to_budget": 1.139,
+        "cost_usd_per_config": 0.0084,
+        "latency_s_mean": 30.623,
+        "latency_s_median": 24.252
+      },
+      "tom_budget:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.7534,
+          "procedural": 0.8121,
+          "belief": 0.5204,
+          "preference": 0.6489,
+          "episodic": 0.6044
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.8333,
+        "median_output_to_budget": 1.096,
+        "cost_usd_per_config": 0.0034,
+        "latency_s_mean": 29.8381,
+        "latency_s_median": 24.937
+      },
+      "tom_jev_budget:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.7448,
+          "procedural": 0.8375,
+          "belief": 0.5826,
+          "preference": 0.6966,
+          "episodic": 0.8407
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.8333,
+        "median_output_to_budget": 1.067,
+        "cost_usd_per_config": 0.0095,
+        "latency_s_mean": 37.2709,
+        "latency_s_median": 29.521
+      },
+      "tom_jev_budget:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.759,
+          "procedural": 0.8639,
+          "belief": 0.599,
+          "preference": 0.7079,
+          "episodic": 0.8352
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.8,
+        "median_output_to_budget": 1.098,
+        "cost_usd_per_config": 0.0047,
+        "latency_s_mean": 33.5516,
+        "latency_s_median": 28.056
+      },
+      "tom_jev_lines": {
+        "per_type_mean": {
+          "constraint": 0.9206,
+          "procedural": 0.8443,
+          "belief": 0.6138,
+          "preference": 0.7347,
+          "episodic": 0.6044
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.8667,
+        "median_output_to_budget": 1.109,
+        "cost_usd_per_config": 0.0035,
+        "latency_s_mean": 24.596,
+        "latency_s_median": 20.879
+      },
+      "vanilla:gpt-5.4-mini": {
+        "per_type_mean": {
+          "constraint": 0.4838,
+          "procedural": 0.7887,
+          "belief": 0.7126,
+          "preference": 0.6823,
+          "episodic": 0.7692
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9667,
+        "median_output_to_budget": 2.054,
+        "cost_usd_per_config": 0.0083,
+        "latency_s_mean": 5.2884,
+        "latency_s_median": 5.169
+      },
+      "vanilla:gpt-5.4-nano": {
+        "per_type_mean": {
+          "constraint": 0.4914,
+          "procedural": 0.7897,
+          "belief": 0.7489,
+          "preference": 0.7463,
+          "episodic": 0.7692
+        },
+        "n_completed": 30,
+        "overshoot_rate": 1.0,
+        "median_output_to_budget": 1.959,
+        "cost_usd_per_config": 0.0023,
+        "latency_s_mean": 9.7401,
+        "latency_s_median": 9.988
+      },
+      "vanilla:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.5741,
+          "procedural": 0.853,
+          "belief": 0.6608,
+          "preference": 0.7679,
+          "episodic": 0.7582
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.6667,
+        "median_output_to_budget": 1.081,
+        "cost_usd_per_config": 0.0019,
+        "latency_s_mean": 9.7737,
+        "latency_s_median": 8.666
+      },
+      "vanilla:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.5404,
+          "procedural": 0.8491,
+          "belief": 0.6831,
+          "preference": 0.7886,
+          "episodic": 0.8407
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.6667,
+        "median_output_to_budget": 1.078,
+        "cost_usd_per_config": 0.0009,
+        "latency_s_mean": 11.4872,
+        "latency_s_median": 10.803
+      }
+    },
+    "0.25": {
+      "aggressive_pruning": {
+        "per_type_mean": {
+          "constraint": 0.2413,
+          "procedural": 0.5915,
+          "belief": 0.3773,
+          "preference": 0.4187,
+          "episodic": 0.5275
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.3333,
+        "median_output_to_budget": 0.994,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0023,
+        "latency_s_median": 0.002
+      },
+      "hierarchical_truncation": {
+        "per_type_mean": {
+          "constraint": 0.2788,
+          "procedural": 0.6272,
+          "belief": 0.4464,
+          "preference": 0.4733,
+          "episodic": 0.6044
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.6,
+        "median_output_to_budget": 1.007,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0023,
+        "latency_s_median": 0.002
+      },
+      "temporal_window": {
+        "per_type_mean": {
+          "constraint": 0.2941,
+          "procedural": 0.6762,
+          "belief": 0.4428,
+          "preference": 0.5414,
+          "episodic": 0.6044
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.7667,
+        "median_output_to_budget": 1.029,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0027,
+        "latency_s_median": 0.002
+      },
+      "tom_budget:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.5322,
+          "procedural": 0.6252,
+          "belief": 0.3485,
+          "preference": 0.4728,
+          "episodic": 0.5549
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9667,
+        "median_output_to_budget": 2.668,
+        "cost_usd_per_config": 0.0083,
+        "latency_s_mean": 31.9771,
+        "latency_s_median": 26.864
+      },
+      "tom_budget:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.501,
+          "procedural": 0.6221,
+          "belief": 0.3501,
+          "preference": 0.4577,
+          "episodic": 0.5659
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9,
+        "median_output_to_budget": 1.174,
+        "cost_usd_per_config": 0.0036,
+        "latency_s_mean": 31.1456,
+        "latency_s_median": 26.97
+      },
+      "tom_jev_budget:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.5453,
+          "procedural": 0.6279,
+          "belief": 0.3349,
+          "preference": 0.4304,
+          "episodic": 0.4121
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9,
+        "median_output_to_budget": 1.106,
+        "cost_usd_per_config": 0.0094,
+        "latency_s_mean": 34.3017,
+        "latency_s_median": 28.398
+      },
+      "tom_jev_budget:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.5496,
+          "procedural": 0.6109,
+          "belief": 0.3291,
+          "preference": 0.454,
+          "episodic": 0.489
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9333,
+        "median_output_to_budget": 1.187,
+        "cost_usd_per_config": 0.0046,
+        "latency_s_mean": 32.6946,
+        "latency_s_median": 29.249
+      },
+      "tom_jev_lines": {
+        "per_type_mean": {
+          "constraint": 0.7557,
+          "procedural": 0.5832,
+          "belief": 0.361,
+          "preference": 0.5156,
+          "episodic": 0.5275
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9667,
+        "median_output_to_budget": 2.693,
+        "cost_usd_per_config": 0.0035,
+        "latency_s_mean": 24.594,
+        "latency_s_median": 20.422
+      },
+      "vanilla:gpt-5.4-mini": {
+        "per_type_mean": {
+          "constraint": 0.2954,
+          "procedural": 0.6362,
+          "belief": 0.4814,
+          "preference": 0.4957,
+          "episodic": 0.6044
+        },
+        "n_completed": 30,
+        "overshoot_rate": 1.0,
+        "median_output_to_budget": 4.009,
+        "cost_usd_per_config": 0.0081,
+        "latency_s_mean": 5.5241,
+        "latency_s_median": 5.5
+      },
+      "vanilla:gpt-5.4-nano": {
+        "per_type_mean": {
+          "constraint": 0.3016,
+          "procedural": 0.6308,
+          "belief": 0.4962,
+          "preference": 0.5275,
+          "episodic": 0.6044
+        },
+        "n_completed": 30,
+        "overshoot_rate": 1.0,
+        "median_output_to_budget": 2.779,
+        "cost_usd_per_config": 0.0019,
+        "latency_s_mean": 8.2606,
+        "latency_s_median": 6.957
+      },
+      "vanilla:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.3679,
+          "procedural": 0.7492,
+          "belief": 0.4136,
+          "preference": 0.5305,
+          "episodic": 0.6758
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.8333,
+        "median_output_to_budget": 1.299,
+        "cost_usd_per_config": 0.0016,
+        "latency_s_mean": 8.8878,
+        "latency_s_median": 7.944
+      },
+      "vanilla:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.2924,
+          "procedural": 0.6716,
+          "belief": 0.47,
+          "preference": 0.5584,
+          "episodic": 0.7912
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9333,
+        "median_output_to_budget": 1.426,
+        "cost_usd_per_config": 0.0009,
+        "latency_s_mean": 12.172,
+        "latency_s_median": 10.621
+      }
+    },
+    "0.1": {
+      "aggressive_pruning": {
+        "per_type_mean": {
+          "constraint": 0.0859,
+          "procedural": 0.3062,
+          "belief": 0.1411,
+          "preference": 0.2092,
+          "episodic": 0.1429
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.0667,
+        "median_output_to_budget": 0.905,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0025,
+        "latency_s_median": 0.002
+      },
+      "hierarchical_truncation": {
+        "per_type_mean": {
+          "constraint": 0.1049,
+          "procedural": 0.3645,
+          "belief": 0.2065,
+          "preference": 0.2369,
+          "episodic": 0.2637
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.2333,
+        "median_output_to_budget": 0.973,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0019,
+        "latency_s_median": 0.002
+      },
+      "temporal_window": {
+        "per_type_mean": {
+          "constraint": 0.1258,
+          "procedural": 0.4238,
+          "belief": 0.2475,
+          "preference": 0.2796,
+          "episodic": 0.5604
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.4667,
+        "median_output_to_budget": 0.988,
+        "cost_usd_per_config": 0.0,
+        "latency_s_mean": 0.0018,
+        "latency_s_median": 0.002
+      },
+      "tom_budget:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.2467,
+          "procedural": 0.3464,
+          "belief": 0.1749,
+          "preference": 0.2352,
+          "episodic": 0.2582
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9667,
+        "median_output_to_budget": 6.882,
+        "cost_usd_per_config": 0.0084,
+        "latency_s_mean": 29.2797,
+        "latency_s_median": 23.218
+      },
+      "tom_budget:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.2344,
+          "procedural": 0.4385,
+          "belief": 0.196,
+          "preference": 0.2238,
+          "episodic": 0.2802
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9333,
+        "median_output_to_budget": 7.429,
+        "cost_usd_per_config": 0.0035,
+        "latency_s_mean": 71.7111,
+        "latency_s_median": 26.281
+      },
+      "tom_jev_budget:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.2525,
+          "procedural": 0.4221,
+          "belief": 0.1853,
+          "preference": 0.2426,
+          "episodic": 0.4066
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.8,
+        "median_output_to_budget": 7.976,
+        "cost_usd_per_config": 0.0093,
+        "latency_s_mean": 53.7114,
+        "latency_s_median": 26.894
+      },
+      "tom_jev_budget:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.2355,
+          "procedural": 0.4082,
+          "belief": 0.1768,
+          "preference": 0.2595,
+          "episodic": 0.3791
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9,
+        "median_output_to_budget": 7.826,
+        "cost_usd_per_config": 0.0046,
+        "latency_s_mean": 34.2605,
+        "latency_s_median": 30.713
+      },
+      "tom_jev_lines": {
+        "per_type_mean": {
+          "constraint": 0.3197,
+          "procedural": 0.3742,
+          "belief": 0.193,
+          "preference": 0.281,
+          "episodic": 0.3132
+        },
+        "n_completed": 30,
+        "overshoot_rate": 1.0,
+        "median_output_to_budget": 6.993,
+        "cost_usd_per_config": 0.0035,
+        "latency_s_mean": 16.0173,
+        "latency_s_median": 15.62
+      },
+      "vanilla:gpt-5.4-mini": {
+        "per_type_mean": {
+          "constraint": 0.1037,
+          "procedural": 0.4303,
+          "belief": 0.2359,
+          "preference": 0.2576,
+          "episodic": 0.3571
+        },
+        "n_completed": 30,
+        "overshoot_rate": 1.0,
+        "median_output_to_budget": 4.145,
+        "cost_usd_per_config": 0.0052,
+        "latency_s_mean": 3.4914,
+        "latency_s_median": 2.684
+      },
+      "vanilla:gpt-5.4-nano": {
+        "per_type_mean": {
+          "constraint": 0.1048,
+          "procedural": 0.4638,
+          "belief": 0.2473,
+          "preference": 0.2889,
+          "episodic": 0.3516
+        },
+        "n_completed": 30,
+        "overshoot_rate": 1.0,
+        "median_output_to_budget": 4.257,
+        "cost_usd_per_config": 0.0014,
+        "latency_s_mean": 5.5491,
+        "latency_s_median": 4.776
+      },
+      "vanilla:gpt-5.6-luna": {
+        "per_type_mean": {
+          "constraint": 0.2326,
+          "procedural": 0.4472,
+          "belief": 0.1704,
+          "preference": 0.2498,
+          "episodic": 0.2912
+        },
+        "n_completed": 30,
+        "overshoot_rate": 1.0,
+        "median_output_to_budget": 1.505,
+        "cost_usd_per_config": 0.0019,
+        "latency_s_mean": 12.4637,
+        "latency_s_median": 11.1
+      },
+      "vanilla:gpt-6-luna": {
+        "per_type_mean": {
+          "constraint": 0.2455,
+          "procedural": 0.4313,
+          "belief": 0.1886,
+          "preference": 0.2826,
+          "episodic": 0.4011
+        },
+        "n_completed": 30,
+        "overshoot_rate": 0.9667,
+        "median_output_to_budget": 1.621,
+        "cost_usd_per_config": 0.0009,
+        "latency_s_mean": 12.5906,
+        "latency_s_median": 12.2
+      }
+    }
+  },
+  "per_strategy": {
+    "aggressive_pruning": {
+      "round_1_c_recall": 0.4877,
+      "round_2_c_recall": 0.2413,
+      "round_3_c_recall": 0.0918,
+      "round_4_c_recall": 0.0303,
+      "round_5_c_recall": 0.0109,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0,
+      "latency_s_mean_per_round": 0.0007
+    },
+    "hierarchical_truncation": {
+      "round_1_c_recall": 0.4545,
+      "round_2_c_recall": 0.2732,
+      "round_3_c_recall": 0.134,
+      "round_4_c_recall": 0.0663,
+      "round_5_c_recall": 0.0551,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0,
+      "latency_s_mean_per_round": 0.0007
+    },
+    "temporal_window": {
+      "round_1_c_recall": 0.5252,
+      "round_2_c_recall": 0.2731,
+      "round_3_c_recall": 0.1446,
+      "round_4_c_recall": 0.0782,
+      "round_5_c_recall": 0.0521,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0,
+      "latency_s_mean_per_round": 0.0007
+    },
+    "tom_budget:gpt-5.6-luna": {
+      "round_1_c_recall": 0.7919,
+      "round_2_c_recall": 0.5993,
+      "round_3_c_recall": 0.3774,
+      "round_4_c_recall": 0.2584,
+      "round_5_c_recall": 0.1915,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0182,
+      "latency_s_mean_per_round": 14.6927
+    },
+    "tom_budget:gpt-6-luna": {
+      "round_1_c_recall": 0.8064,
+      "round_2_c_recall": 0.55,
+      "round_3_c_recall": 0.3168,
+      "round_4_c_recall": 0.222,
+      "round_5_c_recall": 0.1842,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0081,
+      "latency_s_mean_per_round": 15.378
+    },
+    "tom_jev_budget:gpt-5.6-luna": {
+      "round_1_c_recall": 0.7599,
+      "round_2_c_recall": 0.5187,
+      "round_3_c_recall": 0.3177,
+      "round_4_c_recall": 0.2004,
+      "round_5_c_recall": 0.1724,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0224,
+      "latency_s_mean_per_round": 18.5979
+    },
+    "tom_jev_budget:gpt-6-luna": {
+      "round_1_c_recall": 0.7761,
+      "round_2_c_recall": 0.5088,
+      "round_3_c_recall": 0.3316,
+      "round_4_c_recall": 0.2732,
+      "round_5_c_recall": 0.2027,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0112,
+      "latency_s_mean_per_round": 16.8627
+    },
+    "tom_jev_lines": {
+      "round_1_c_recall": 0.9182,
+      "round_2_c_recall": 0.7323,
+      "round_3_c_recall": 0.4454,
+      "round_4_c_recall": 0.296,
+      "round_5_c_recall": 0.2015,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0067,
+      "latency_s_mean_per_round": 5.0271
+    },
+    "vanilla:gpt-5.4-mini": {
+      "round_1_c_recall": 0.495,
+      "round_2_c_recall": 0.2912,
+      "round_3_c_recall": 0.1158,
+      "round_4_c_recall": 0.0483,
+      "round_5_c_recall": 0.0384,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0165,
+      "latency_s_mean_per_round": 2.6405
+    },
+    "vanilla:gpt-5.4-nano": {
+      "round_1_c_recall": 0.4985,
+      "round_2_c_recall": 0.3016,
+      "round_3_c_recall": 0.1546,
+      "round_4_c_recall": 0.0678,
+      "round_5_c_recall": 0.044,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0044,
+      "latency_s_mean_per_round": 4.2026
+    },
+    "vanilla:gpt-5.6-luna": {
+      "round_1_c_recall": 0.5903,
+      "round_2_c_recall": 0.3356,
+      "round_3_c_recall": 0.2154,
+      "round_4_c_recall": 0.1521,
+      "round_5_c_recall": 0.1205,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.007,
+      "latency_s_mean_per_round": 10.3137
+    },
+    "vanilla:gpt-6-luna": {
+      "round_1_c_recall": 0.4868,
+      "round_2_c_recall": 0.2189,
+      "round_3_c_recall": 0.1343,
+      "round_4_c_recall": 0.0838,
+      "round_5_c_recall": 0.0749,
+      "n_completed": 30,
+      "cost_usd_per_config": 0.0034,
+      "latency_s_mean_per_round": 9.4753
+    }
+  }
+}

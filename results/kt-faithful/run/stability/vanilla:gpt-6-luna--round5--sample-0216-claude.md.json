@@ -1,0 +1,1 @@
+{"arm": "vanilla:gpt-6-luna", "config": "sample-0216-claude.md", "round": 5, "budget": 64, "raw_chars": 0, "overshoot": false, "cost_usd": 8.839999999998849e-05, "c_recall": 0.125, "output_text": ""}

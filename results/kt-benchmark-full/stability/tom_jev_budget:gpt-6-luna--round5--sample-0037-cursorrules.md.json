@@ -1,0 +1,1 @@
+{"arm": "tom_jev_budget:gpt-6-luna", "config": "sample-0037-cursorrules.md", "round": 5, "budget": 64, "raw_chars": 125, "overshoot": false, "cost_usd": 0.0005269739999995693, "latency_s": 5.438, "c_recall": 0.2222222222222222, "output_text": "Constraints:\n**TypeScript for Type Safety:** All new code must be in TypeScript.\nSecurely manage environment-specific values."}

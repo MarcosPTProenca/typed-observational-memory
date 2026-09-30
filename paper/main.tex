@@ -1,0 +1,154 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,booktabs,tabularx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[round,authoryear]{natbib}
+\usepackage[colorlinks=true,urlcolor=blue!55!black,citecolor=blue!55!black,linkcolor=blue!55!black]{hyperref}
+\setlist[itemize]{nosep,leftmargin=*}
+\widowpenalty=10000 \clubpenalty=10000
+\newcommand{\method}{\textsc{LineTOM--Jev}}
+\newcommand{\rawrec}{\operatorname{R}_{\mathrm{trunc}}}
+\newcommand{\valid}{\operatorname{V}}
+\title{Fast Line-Level Typed Memory under Hard Context Budgets:\\A Reappraisal of Agent-Configuration Compaction}
+\author{Marcos Pinho\\\small Affiliation and coauthor list to be confirmed before submission}
+\date{Draft for author review --- September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Agent configurations mix rules, procedures, background facts, and incidental text.  Compression that treats these uniformly risks deleting rules, whereas retaining too many items defeats the context budget.  We study a line-level typed observational-memory implementation, \method{}, which assigns types using the Jev structured-decision model without a generative extraction step.  We adapt the configuration-compaction protocol of \citet{zerhoudi2026cliff} to 50 locally available agent artifacts and compare against three type-blind structural heuristics, four generative model compactors, and four generative typed-memory ablations.  No evaluated compressor receives the reference labels.  On 30 configurations withheld from method development, \method{} retains a mean 0.921 of automatically labeled constraints after truncation to a nominal 50\% budget, versus 0.574 for a GPT-5.6 Luna compactor; the paired difference is 0.347 (95\% configuration-bootstrap interval [0.278, 0.417]).  Yet only 4/30 raw \method{} outputs satisfy that budget, versus 10/30 for GPT-5.6 Luna. At a 10\% budget, no \method{} output is valid before truncation.  A separate 4,873-line label audit finds constraint recall 0.880 but precision only 0.343 relative to the reference cascade: surplus protected items frequently make the minimum feasible memory larger than the target.  Thus line-level typing yields an attractive recall--latency trade-off \emph{under post-hoc truncation}, but these experiments do not establish successful strict-budget compaction or downstream safety.  We provide a locally auditable analysis of both the positive and negative findings.
+\end{abstract}
+
+\noindent\textbf{Keywords:} agent memory; context compaction; typed memory; constraint preservation; budget feasibility.
+
+\section{Introduction}
+An agent's operating instructions contain requirements whose loss differs qualitatively from the loss of contextual detail.  \citet{zerhoudi2026cliff} document a compaction cliff in long-running agents and propose type-sensitive management of constraints, procedures, beliefs, preferences, and episodic content.  The conceptual appeal of combining this distinction with an online observational-memory pipeline is clear: keep important state as typed observations and use a cheap structured classifier rather than repeatedly asking a generative model to summarize an entire artifact.  Observational memory as described by \citet{mastra2026observational} uses an observer and reflector to maintain a compact working set; unlike that general design, our evaluated \emph{line-level} variant neither runs a generative observer nor a reflector and makes no claims about conversation QA.  The classifying service Jev returns structured choices rather than free-form text \citep{typesafe2026jev}.
+
+A superficial evaluation can conflate three different achievements: identifying a rule, keeping it somewhere in a potentially overlong output, and producing a valid output inside the requested budget.  The first does not imply the last.  We therefore report both (i) reference-rule recall \emph{after} the output is truncated according to a published character-budget protocol and (ii) whether the \emph{untruncated} output fits that budget.  We additionally measure classification agreement, estimated API expenditure, and isolated wall-clock latency.  We do not compare against the label-aware TypeCompact operator because it receives the same type assignments that define this evaluation's reference set; this article evaluates only arms that receive the raw text.  Nor do we compare against an original Observational Memory implementation.  The central question is whether typed line-wise retention improves rule recall over text-only compactors \emph{without obscuring a feasibility failure}.
+
+Our contributions are an end-to-end, label-blind comparison of \method{} with 11 accessible alternatives over three target ratios and five successive rounds; a paired and held-out analysis contrasting post-truncation recall with strict-budget feasibility; and a mechanism audit connecting an over-inclusive constraint classifier to an infeasible protected-content floor.  This is an exploratory artifact-level study, not a demonstration that an agent obeys preserved rules at execution time.
+
+\section{Prior Work}
+The reference protocol and five-type taxonomy come from \citet{zerhoudi2026cliff}, whose AgentArtifactCorpus contains hundreds of thousands of agent artifacts.  Their study evaluates compaction, decomposition, and retrieval; we study \emph{only compaction}.  Our sampled files and reference-labeler substitutions preclude a direct numerical reproduction of their tables.  Unlike their TypeCompact operator, every evaluated arm here observes raw unannotated text.  Their key-token criterion measures lexical preservation rather than actual agent compliance, a distinction also important for the present work.
+
+Learned task-agnostic compression in LLMLingua-2 \citep{pan2024llmlingua2} and hierarchical context management in MemGPT \citep{packer2023memgpt} illustrate alternative routes to handling limited context, but neither is executed in our benchmark.  Generative Agents \citep{park2023generative} and Mastra's observational-memory report \citep{mastra2026observational} motivate observation and consolidation, while LongMemEval \citep{wu2025longmemeval} concerns downstream long-term memory behavior rather than constraint survival in configuration files.  Information position also affects use of long contexts \citep{liu2024lost}; our truncation and rendering order consequently deserve scrutiny.  We cite these works for context, \emph{not} as measured baselines.
+
+\section{Method}
+\subsection{Configuration sample and reference labels}
+We load 50 markdown agent-configuration files from the locally available AAC sample (328 files), using deterministic seed 11 and the existing E2-style eligibility filter: 800--30,000 characters, at least ten cleaned lines, and at least one regex-detected constraint.  The latter is a \emph{selection criterion}, not a label passed to a compressor, but biases the sample toward imperative-language documents.  Files are selected in seeded order rather than the language/star/artifact-count stratification of the original paper; this is an adaptation, not a matched reproduction.  The first 20 selected files were previously used during method development; our principal results are the remaining 30, with all 50 reported separately in the saved results.  Configuration identity, seed and order are retained in the run manifest.
+
+A fixed label cache supplies evaluation targets.  It is built with the published regex--embedding--LLM cascade implementation \citep{zerhoudi2026cliff}, replacing its unavailable \texttt{octen-embedding-8b} encoder with \texttt{text-embedding-3-large} and using \texttt{gpt-5.4-mini} for adjudication.  The cascade abstains toward a hard-retention class; it is \emph{not} an independent human gold standard.  Of 4,873 distinct cleaned lines, the cache records 272 regex, 329 embedding, and 4,272 LLM decisions.  This cache is used solely \emph{after compaction}, to score preserved text; no evaluated arm reads it.  Running a compressor twice does not require re-annotating a config.
+
+\subsection{Line-level typed observational memory}
+\method{} splits a configuration into cleaned lines; each line becomes an event.  A Jev \texttt{Choice} decision (observed model version \texttt{jev-1.13.0}) assigns one of five types and ancillary importance/retention labels \citep{typesafe2026jev}.  No generative extraction can drop or paraphrase a line before classification.  The study's fixed task policy assigns \texttt{EXACT} to Jev-labeled constraints, \texttt{HIGH\_FIDELITY} to procedures and \texttt{COMPRESSIBLE} to everything else.  The memory projector protects \texttt{EXACT} entries, then admits remaining entries by retention and importance while they fit its token count.  Rendered output groups constraints ahead of procedures.  If protected entries alone exceed the budget, projection signals unsafe; the experimental wrapper returns the protected constraints \emph{and} high-fidelity procedures as a best-effort fallback.  This makes a useful diagnostic artifact, not a valid budget-respecting output.  In particular, the implementation is not a hard-budget algorithm.
+
+Ablations replace the line observer with a generative typed observer, using either GPT-6 Luna or GPT-5.6 Luna, and optionally apply Jev to \emph{only the items that observer extracted}.  They use the same projector and budgeted task setting.  These ablations separate direct line classification from post-extraction reclassification; the latter cannot recover a rule omitted by the generative observer.  We did not train or tune the Jev model on the reference labels.
+
+\subsection{Comparators and evaluation protocol}
+The structural comparators keep a leading prefix (hierarchical-truncation proxy), a trailing window, or longest lines first (aggressive-pruning proxy).  These are simple \emph{type-blind proxies}, not full commercial summarizers.  The four free-form compactor arms use the reference configuration-compaction prompt (keep every safety rule and procedural command verbatim) with GPT-5.4 nano, GPT-5.4 mini, GPT-5.6 Luna, or GPT-6 Luna.  A 16,000-completion-token ceiling avoids starvation of final text by reasoning tokens in the Luna models; earlier capped runs were discarded.  Proprietary Anthropic models, LLMLingua-2, and MaRS-FL were not run, as requested or unavailable.
+
+For configuration $i$ and target ratio $\rho\in\{0.50,0.25,0.10\}$, define the reference heuristic token estimate and budget by
+\[
+T_i=\sum_j\max(1,\lfloor |\ell_{ij}|/4\rfloor),\qquad
+B_i(\rho)=\max(64,\lfloor\rho T_i\rfloor).
+\]
+The scoring text is the first $4B_i$ characters of the raw output $O_{ia\rho}$ for arm $a$.  Write $C_i$ for the reference set of constraint lines and $K(c,x)$ for the original key-token preservation predicate.  We use the per-configuration macro score
+\begin{equation}
+\rawrec(i,a,\rho)=\frac{1}{|C_i|}\sum_{c\in C_i} \mathbf{1}\{K(c,O_{ia\rho}[{:}4B_i])\}, \quad
+\valid(i,a,\rho)=\mathbf{1}\{|O_{ia\rho}|\leq 4B_i\}.
+\label{eq:metrics}
+\end{equation}
+This is \emph{lexical key-token recall}, not exact-match retention or verified instruction-following. The original predicate accepts a constraint with no extracted key tokens by default; this affects 2 of 339 constraint items (0.6\%) on our held-out files.  The two summary statistics are $\overline{\rawrec}$ and the feasibility fraction $\overline{\valid}$.  We also report $\overline{\valid\rawrec}$ (invalid runs assigned zero) as an explicit feasibility-weighted diagnostic; it is not interchangeable with recall conditioned on valid outputs.  In five-round experiments each arm's \emph{truncated} output is its next input and its next nominal budget is half the previous text's estimated tokens, floored at 64.  Every round is scored against the original configuration's constraints.  Our extended curves include all 50 sampled files at each ratio, unlike the original paper's smaller ratio subset.
+
+Every configuration is paired across arms.  For selected comparisons, we resample the 30 held-out \emph{configurations} with replacement (10,000 percentile-bootstrap draws, seed 11) to give 95\% intervals for mean within-configuration differences \citep{efron1979bootstrap}; these are descriptive, unadjusted for multiple comparisons.  API cost is an estimate from metered provider usage and published per-token prices; latency is from a separate single-worker ten-configuration run at 50\%, rather than the throughput-stressed concurrent main run.  Neither time nor cost includes dataset preparation or the one-time cost of the reference cascade.  Structural heuristics incur no paid inference charge.
+
+\section{Results}
+\subsection{High post-truncation recall but low feasibility}
+Table~\ref{tab:results} gives the primary held-out results.  The line-level Jev method obtains the highest reference-constraint recall across all three ratios, 0.921, 0.756 and 0.320.  At 50\%, the mean paired gain over GPT-5.6 Luna is 0.347 (95\% interval [0.278, 0.417]); at 25\%, 0.388 [0.291, 0.494], and at 10\%, 0.087 [0.004, 0.170].  This is evidence for the \emph{truncation-scored} metric on these files and this surrogate labeler, not generalization to safety outcomes.  Full-sample (50-file) recall for \method{} is 0.914/0.736/0.329, closely matching the held-out pattern; both summaries and per-file records are provided with the artifact.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Held-out 30-file constraint recall after truncation and valid raw-output count (in parentheses). Each arm completes 30 files per ratio. R5 is recall after five sequential 50\% rounds. No arm receives reference labels.}
+\label{tab:results}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccc@{}}\toprule
+Arm & 50\% $R$ (valid) & 25\% $R$ (valid) & 10\% $R$ (valid) & R5 $R$\\\midrule
+\method{} & \textbf{.921 (4)} & \textbf{.756 (1)} & \textbf{.320 (0)} & .202\\
+TOM+Jev, GPT-6 Luna observer & .759 (6) & .550 (2) & .236 (3) & .203\\
+TOM+Jev, GPT-5.6 Luna observer & .745 (5) & .545 (3) & .253 (6) & .172\\
+TOM, GPT-6 Luna observer & .753 (5) & .501 (3) & .234 (2) & .184\\
+GPT-5.6 Luna, direct compaction & .574 (10) & .368 (5) & .233 (0) & .121\\
+GPT-6 Luna, direct compaction & .540 (10) & .292 (2) & .245 (1) & .075\\
+GPT-5.4 mini, direct compaction & .484 (1) & .295 (0) & .104 (0) & .038\\
+GPT-5.4 nano, direct compaction & .491 (0) & .302 (0) & .105 (0) & .044\\
+Temporal window & .525 (3) & .294 (7) & .126 (16) & .052\\
+Prefix truncation & .455 (8) & .279 (12) & .105 (23) & .055\\
+Longest-lines pruning & .488 (6) & .241 (20) & .086 (28) & .011\\\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.83\textwidth]{figures/recall.png}
+\caption{Constraint recall on the held-out set after post-hoc truncation. Shown arms are a subset of Table~\ref{tab:results}; see validity in Figure~\ref{fig:valid}. Lines connect three discrete target budgets, not a fitted curve.}
+\label{fig:recall}\end{figure}
+
+At 50\%, \method{} is valid on just 4/30 held-out files (13.3\%) while the best direct Luna comparator is valid on 10/30 (33.3\%). At 25\% it is valid on 1/30; at 10\%, 0/30.  The median \emph{raw} output is 1.11, 2.69, and 6.99 times the respective character limit.  Consequently, for the feasibility-weighted statistic $\overline{\valid\rawrec}$, \method{} scores 0.133 against 0.216 for GPT-5.6 Luna at 50\%, and 0.028 against 0.090 at 25\%.  The 50\% paired difference is $-0.083$ (95\% interval [$-0.227$, 0.067]); no superiority under a strict budget is supported.  These zero-assignment results do \emph{not} estimate what an online agent would do upon encountering an invalid output.  At 10\%, both \method{} and GPT-5.6 Luna have zero valid outputs on the held-out set, so comparing their post-truncation recall alone is particularly misleading.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.82\textwidth]{figures/validity.png}
+\caption{Fraction of raw outputs satisfying the \emph{same} character budget used for Figure~\ref{fig:recall}, before truncation. Values of zero mean no valid output among 30 held-out files.}
+\label{fig:valid}\end{figure}
+
+\subsection{Repeated compaction, cost and latency}
+Figure~\ref{fig:rounds} reports the five-round decline.  \method{} falls from 0.918 after one round to 0.202 after five (held-out 30), while GPT-5.6 Luna falls from 0.590 to 0.121.  The line method's early-round advantage does not imply a stable guarantee; at round five its recall is nearly identical to TOM+Jev with the GPT-6 observer (0.203).  The method rescores against \emph{original} constraints, including those no longer present in the prior round.  No round-by-round strict-budget validity is inferred from these recall curves.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.83\textwidth]{figures/rounds.png}
+\caption{Constraint recall against the original rules after successive 50\%-target rounds, with each arm's truncated text recycled as its next input. Held-out configurations, $n=30$.}
+\label{fig:rounds}\end{figure}
+
+Table~\ref{tab:operational} reports metered inference costs and latency measured in isolation.  Jev line classification is faster than every paid LLM arm on this ten-file timing sample, but direct GPT-5.6 and GPT-6 Luna compaction cost \emph{less} per configuration at 50\% than \method{}.  We therefore claim a speed advantage in this specific setting, not universal cost dominance.  Shared-provider rate limits raised latency dramatically during the 16-worker main run; we do not interpret that throughput-constrained run as single-request latency.
+
+\begin{table}[htbp]\centering\small
+\caption{Estimated paid inference cost per held-out configuration at 50\% (30 files) and isolated median wall time (separate ten-file, one-worker run). Monetary values exclude reference-label generation and provider discounts.}
+\label{tab:operational}
+\begin{tabular}{@{}lrr@{}}\toprule
+Arm & USD/config & Isolated median (s)\\\midrule
+\method{} & 0.00353 & 1.44\\
+TOM+Jev, GPT-6 observer & 0.00466 & 20.86\\
+TOM+Jev, GPT-5.6 observer & 0.00949 & 26.42\\
+TOM, GPT-6 observer & 0.00341 & 22.31\\
+GPT-5.6 Luna direct & 0.00190 & 9.52\\
+GPT-6 Luna direct & 0.00091 & 9.72\\
+GPT-5.4 mini direct & 0.00827 & 4.15\\
+GPT-5.4 nano direct & 0.00226 & 8.06\\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Mechanism: excess protected content}
+The generator-observer ablation is informative.  On the held-out set at 50\%, post-extraction Jev reclassification changes GPT-6 TOM's recall by only +0.006 (95\% interval [$-0.058$, 0.066]) and GPT-5.6 TOM's by $-0.022$ ([$-0.068$, 0.025]); this does not establish a gain from Jev \emph{after} a generative observer.  Bypassing that extraction stage with Jev per line increases recall over GPT-6 observer+Jev by 0.162 [0.092, 0.231].  Because other implementation details may interact, the ablation is not a causal estimate of how many specific rules the observer omitted.
+
+A separate, newly collected 4,873-distinct-line audit compares Jev classifications with the fixed cascade.  Raw five-way agreement is 0.586 (Cohen's $\kappa=0.451$).  Taking cascade-labeled constraints as positives, Jev recalls 468/532 (0.880) but predicts 1,365 constraints, for a reference precision of 468/1,365 (0.343); its procedural recall and precision are 0.756 and 0.737.  Held-out-only constraint recall and precision are 0.873 and 0.338 across 3,278 distinct lines.  These are \emph{agreement} figures, not human-grounded accuracy: e.g., a normative preference labeled as such by the cascade may plausibly be a rule to Jev.  Nevertheless, the many extra protected lines increase the floor of output that the projector cannot safely discard.
+
+Reconstructing the 10\% first-round projection from these separately cached Jev labels predicts that \texttt{EXACT} constraints alone exceed the token budget in 49/50 files; their median token load is 2.77 times the budget.  The unsafe fallback then includes procedures as well, raising the median protected-token load to 6.28 times the budget (7.08 times in the four-characters-per-token scoring convention), near the observed median raw-output ratio of 6.99.  For 44/49 predicted-unsafe files, reconstructed and measured raw character counts agree within 5\%.  The classification audit was run \emph{after} the compaction run, so its Jev decisions need not be identical; these are mechanism-consistent diagnostics, not an exact replay of the original labels.  The token-versus-character accounting mismatch adds some inflation but cannot alone explain a sevenfold overshoot.  The greater problem is the protected-content floor and the fallback's refusal to pretend the output is valid.
+
+\section{Limitations and Reproducibility}
+Our reference labels are machine-produced by a cascade that shares the five-type ontology with the method and can route ambiguous items toward constraints.  Although no compared compressor sees those labels, their definitions can favor a classifier that overpredicts rule-like content; our agreement statistics do not adjudicate which classifier is semantically correct.  The sample contains only 50 selected files from 328 locally available AAC files, is selected conditional on regex constraint detection, and is not the original stratified 50-file set.  Development informed the method on the first 20, leaving only 30 held out; because method choices, metrics and comparisons were not preregistered, reported bootstrap intervals are descriptive and not multiple-testing-corrected.  Additional fresh corpora and an independently validated target are required for external claims about generality or safety.
+
+We follow the character-truncation scoring convention, not actual deployment token counting: the projector uses \texttt{o200k\_base} tokens while the benchmark uses four characters per token.  The current records retain the scored text and \emph{length} of the raw output, not the complete pre-truncation text; hence post-hoc forensic audits cannot reconstruct every original character.  The saved manifest's \texttt{git\_sha} is the literal value \texttt{HEAD} because this working tree had no resolvable commit; it must not be treated as a source revision.  File hashes in the analysis artifact fingerprint the \emph{current} source and label cache and cannot retroactively establish immutable code provenance for an earlier run.  The per-config JSON, ordered file list, scoring code, cascade cache, pricing assumptions, and script to regenerate plots are retained locally, but they need packaging and archival before a public arXiv submission.  API model aliases, nondeterminism, retries, and provider rate limits also restrict exact replay.  The separate ten-file latency sample overlaps development configurations; it is an operational illustration rather than a general performance guarantee.
+
+We did not test downstream rule compliance, independent human judgments, other projects, full observational-memory reflection, commercial Anthropic models, or local-model compression baselines such as LLMLingua-2.  In particular, the five-round recall is not a five-round \emph{budget-valid} result.  The feasibility-weighted statistic penalizes an invalid raw output with zero rather than crediting a truncated output; applications might choose a different fallback, requiring a new prospective evaluation.
+
+\section{Conclusion}
+Direct line-wise type assignment can be a fast way to retain many automatically designated agent rules when outputs are truncated before scoring.  On a held-out local sample, \method{} outperforms available text-only model compactors under that metric and is faster in an isolated timing run.  But high rule recall and genuine budget-limited compaction are different claims: conservative classification creates a protected-content floor, and the present unsafe fallback exceeds the target in most cases.  Neither the measured lexical survival nor the label agreement establishes behavioral safety.  Future work should test a budget-feasible retention policy on unseen artifacts and independent task-level outcomes before advancing a general superiority claim.
+
+\paragraph{Artifact availability.} Source: \texttt{src/tom/benchmarks/kt\_faithful.py} and \texttt{kt\_diagnostics.py}; measurements: \texttt{results/kt-benchmark-full/} and \texttt{results/kt-benchmark-latency/}; figures and derived statistics: \texttt{paper/make\_figures.py} and \texttt{paper/analysis.json}. Public archival URL and definitive source revision are pending author approval.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

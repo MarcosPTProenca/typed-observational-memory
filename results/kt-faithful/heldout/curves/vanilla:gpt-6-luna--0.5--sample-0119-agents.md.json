@@ -1,0 +1,1 @@
+{"arm": "vanilla:gpt-6-luna", "config": "sample-0119-agents.md", "ratio": 0.5, "budget": 234, "raw_chars": 0, "overshoot": false, "cost_usd": 0.0007511000000000045, "per_type": {"constraint": 0.0, "procedural": 0.0, "belief": 0.0, "preference": 0.0, "episodic": NaN}, "output_text": ""}

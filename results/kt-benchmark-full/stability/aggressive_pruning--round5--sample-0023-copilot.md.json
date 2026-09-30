@@ -1,0 +1,1 @@
+{"arm": "aggressive_pruning", "config": "sample-0023-copilot.md", "round": 5, "budget": 64, "raw_chars": 0, "overshoot": false, "cost_usd": 0.0, "latency_s": 0.0, "c_recall": 0.0, "output_text": ""}

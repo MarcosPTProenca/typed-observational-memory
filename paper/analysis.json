@@ -1,0 +1,509 @@
+{
+  "analysis_set": "30 held-out configurations: positions 21-50 in seed-11 manifest",
+  "dev_set_size": 20,
+  "score": "constraint key-token match on text[:4*budget]",
+  "valid": "len(raw_text)<=4*budget before truncation",
+  "validity_weighted_recall": "mean over all configurations of recall*1[valid] (invalid assigned zero)",
+  "ratios": {
+    "0.5": {
+      "hierarchical_truncation": {
+        "n": 30,
+        "valid": 8,
+        "mean_constraint_recall_after_truncation": 0.4545,
+        "mean_procedure_recall_after_truncation": 0.7783,
+        "mean_validity_weighted_recall": 0.0778,
+        "valid_only_recall": 0.2918,
+        "median_raw_to_budget": 1.03,
+        "mean_cost_usd": 0.0
+      },
+      "temporal_window": {
+        "n": 30,
+        "valid": 3,
+        "mean_constraint_recall_after_truncation": 0.5252,
+        "mean_procedure_recall_after_truncation": 0.8563,
+        "mean_validity_weighted_recall": 0.0456,
+        "valid_only_recall": 0.4563,
+        "median_raw_to_budget": 1.033,
+        "mean_cost_usd": 0.0
+      },
+      "aggressive_pruning": {
+        "n": 30,
+        "valid": 6,
+        "mean_constraint_recall_after_truncation": 0.4877,
+        "mean_procedure_recall_after_truncation": 0.751,
+        "mean_validity_weighted_recall": 0.0597,
+        "valid_only_recall": 0.2987,
+        "median_raw_to_budget": 1.016,
+        "mean_cost_usd": 0.0
+      },
+      "vanilla:gpt-5.4-nano": {
+        "n": 30,
+        "valid": 0,
+        "mean_constraint_recall_after_truncation": 0.4914,
+        "mean_procedure_recall_after_truncation": 0.7897,
+        "mean_validity_weighted_recall": 0.0,
+        "valid_only_recall": null,
+        "median_raw_to_budget": 1.959,
+        "mean_cost_usd": 0.002256
+      },
+      "vanilla:gpt-5.4-mini": {
+        "n": 30,
+        "valid": 1,
+        "mean_constraint_recall_after_truncation": 0.4838,
+        "mean_procedure_recall_after_truncation": 0.7887,
+        "mean_validity_weighted_recall": 0.0283,
+        "valid_only_recall": 0.85,
+        "median_raw_to_budget": 2.054,
+        "mean_cost_usd": 0.008271
+      },
+      "vanilla:gpt-6-luna": {
+        "n": 30,
+        "valid": 10,
+        "mean_constraint_recall_after_truncation": 0.5404,
+        "mean_procedure_recall_after_truncation": 0.8491,
+        "mean_validity_weighted_recall": 0.1756,
+        "valid_only_recall": 0.5269,
+        "median_raw_to_budget": 1.078,
+        "mean_cost_usd": 0.000911
+      },
+      "vanilla:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 10,
+        "mean_constraint_recall_after_truncation": 0.5741,
+        "mean_procedure_recall_after_truncation": 0.853,
+        "mean_validity_weighted_recall": 0.2164,
+        "valid_only_recall": 0.6491,
+        "median_raw_to_budget": 1.081,
+        "mean_cost_usd": 0.001902
+      },
+      "tom_budget:gpt-6-luna": {
+        "n": 30,
+        "valid": 5,
+        "mean_constraint_recall_after_truncation": 0.7534,
+        "mean_procedure_recall_after_truncation": 0.8121,
+        "mean_validity_weighted_recall": 0.1522,
+        "valid_only_recall": 0.9133,
+        "median_raw_to_budget": 1.096,
+        "mean_cost_usd": 0.003414
+      },
+      "tom_budget:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 5,
+        "mean_constraint_recall_after_truncation": 0.7665,
+        "mean_procedure_recall_after_truncation": 0.8105,
+        "mean_validity_weighted_recall": 0.1485,
+        "valid_only_recall": 0.8911,
+        "median_raw_to_budget": 1.139,
+        "mean_cost_usd": 0.008363
+      },
+      "tom_jev_budget:gpt-6-luna": {
+        "n": 30,
+        "valid": 6,
+        "mean_constraint_recall_after_truncation": 0.759,
+        "mean_procedure_recall_after_truncation": 0.8639,
+        "mean_validity_weighted_recall": 0.1588,
+        "valid_only_recall": 0.794,
+        "median_raw_to_budget": 1.098,
+        "mean_cost_usd": 0.004655
+      },
+      "tom_jev_budget:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 5,
+        "mean_constraint_recall_after_truncation": 0.7448,
+        "mean_procedure_recall_after_truncation": 0.8375,
+        "mean_validity_weighted_recall": 0.1311,
+        "valid_only_recall": 0.7867,
+        "median_raw_to_budget": 1.067,
+        "mean_cost_usd": 0.009491
+      },
+      "tom_jev_lines": {
+        "n": 30,
+        "valid": 4,
+        "mean_constraint_recall_after_truncation": 0.9206,
+        "mean_procedure_recall_after_truncation": 0.8443,
+        "mean_validity_weighted_recall": 0.1333,
+        "valid_only_recall": 1.0,
+        "median_raw_to_budget": 1.109,
+        "mean_cost_usd": 0.003529
+      }
+    },
+    "0.25": {
+      "hierarchical_truncation": {
+        "n": 30,
+        "valid": 12,
+        "mean_constraint_recall_after_truncation": 0.2788,
+        "mean_procedure_recall_after_truncation": 0.6272,
+        "mean_validity_weighted_recall": 0.0631,
+        "valid_only_recall": 0.1577,
+        "median_raw_to_budget": 1.007,
+        "mean_cost_usd": 0.0
+      },
+      "temporal_window": {
+        "n": 30,
+        "valid": 7,
+        "mean_constraint_recall_after_truncation": 0.2941,
+        "mean_procedure_recall_after_truncation": 0.6762,
+        "mean_validity_weighted_recall": 0.0722,
+        "valid_only_recall": 0.3093,
+        "median_raw_to_budget": 1.029,
+        "mean_cost_usd": 0.0
+      },
+      "aggressive_pruning": {
+        "n": 30,
+        "valid": 20,
+        "mean_constraint_recall_after_truncation": 0.2413,
+        "mean_procedure_recall_after_truncation": 0.5915,
+        "mean_validity_weighted_recall": 0.1283,
+        "valid_only_recall": 0.1924,
+        "median_raw_to_budget": 0.994,
+        "mean_cost_usd": 0.0
+      },
+      "vanilla:gpt-5.4-nano": {
+        "n": 30,
+        "valid": 0,
+        "mean_constraint_recall_after_truncation": 0.3016,
+        "mean_procedure_recall_after_truncation": 0.6308,
+        "mean_validity_weighted_recall": 0.0,
+        "valid_only_recall": null,
+        "median_raw_to_budget": 2.779,
+        "mean_cost_usd": 0.001911
+      },
+      "vanilla:gpt-5.4-mini": {
+        "n": 30,
+        "valid": 0,
+        "mean_constraint_recall_after_truncation": 0.2954,
+        "mean_procedure_recall_after_truncation": 0.6362,
+        "mean_validity_weighted_recall": 0.0,
+        "valid_only_recall": null,
+        "median_raw_to_budget": 4.009,
+        "mean_cost_usd": 0.00815
+      },
+      "vanilla:gpt-6-luna": {
+        "n": 30,
+        "valid": 2,
+        "mean_constraint_recall_after_truncation": 0.2924,
+        "mean_procedure_recall_after_truncation": 0.6716,
+        "mean_validity_weighted_recall": 0.0241,
+        "valid_only_recall": 0.3611,
+        "median_raw_to_budget": 1.426,
+        "mean_cost_usd": 0.000892
+      },
+      "vanilla:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 5,
+        "mean_constraint_recall_after_truncation": 0.3679,
+        "mean_procedure_recall_after_truncation": 0.7492,
+        "mean_validity_weighted_recall": 0.0897,
+        "valid_only_recall": 0.5382,
+        "median_raw_to_budget": 1.299,
+        "mean_cost_usd": 0.001588
+      },
+      "tom_budget:gpt-6-luna": {
+        "n": 30,
+        "valid": 3,
+        "mean_constraint_recall_after_truncation": 0.501,
+        "mean_procedure_recall_after_truncation": 0.6221,
+        "mean_validity_weighted_recall": 0.0654,
+        "valid_only_recall": 0.6537,
+        "median_raw_to_budget": 1.174,
+        "mean_cost_usd": 0.003574
+      },
+      "tom_budget:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 1,
+        "mean_constraint_recall_after_truncation": 0.5322,
+        "mean_procedure_recall_after_truncation": 0.6252,
+        "mean_validity_weighted_recall": 0.0333,
+        "valid_only_recall": 1.0,
+        "median_raw_to_budget": 2.668,
+        "mean_cost_usd": 0.008309
+      },
+      "tom_jev_budget:gpt-6-luna": {
+        "n": 30,
+        "valid": 2,
+        "mean_constraint_recall_after_truncation": 0.5496,
+        "mean_procedure_recall_after_truncation": 0.6109,
+        "mean_validity_weighted_recall": 0.0259,
+        "valid_only_recall": 0.3889,
+        "median_raw_to_budget": 1.187,
+        "mean_cost_usd": 0.004622
+      },
+      "tom_jev_budget:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 3,
+        "mean_constraint_recall_after_truncation": 0.5453,
+        "mean_procedure_recall_after_truncation": 0.6279,
+        "mean_validity_weighted_recall": 0.05,
+        "valid_only_recall": 0.5,
+        "median_raw_to_budget": 1.106,
+        "mean_cost_usd": 0.009357
+      },
+      "tom_jev_lines": {
+        "n": 30,
+        "valid": 1,
+        "mean_constraint_recall_after_truncation": 0.7557,
+        "mean_procedure_recall_after_truncation": 0.5832,
+        "mean_validity_weighted_recall": 0.0278,
+        "valid_only_recall": 0.8333,
+        "median_raw_to_budget": 2.693,
+        "mean_cost_usd": 0.003529
+      }
+    },
+    "0.1": {
+      "hierarchical_truncation": {
+        "n": 30,
+        "valid": 23,
+        "mean_constraint_recall_after_truncation": 0.1049,
+        "mean_procedure_recall_after_truncation": 0.3645,
+        "mean_validity_weighted_recall": 0.0831,
+        "valid_only_recall": 0.1085,
+        "median_raw_to_budget": 0.973,
+        "mean_cost_usd": 0.0
+      },
+      "temporal_window": {
+        "n": 30,
+        "valid": 16,
+        "mean_constraint_recall_after_truncation": 0.1258,
+        "mean_procedure_recall_after_truncation": 0.4238,
+        "mean_validity_weighted_recall": 0.0829,
+        "valid_only_recall": 0.1555,
+        "median_raw_to_budget": 0.988,
+        "mean_cost_usd": 0.0
+      },
+      "aggressive_pruning": {
+        "n": 30,
+        "valid": 28,
+        "mean_constraint_recall_after_truncation": 0.0859,
+        "mean_procedure_recall_after_truncation": 0.3062,
+        "mean_validity_weighted_recall": 0.0636,
+        "valid_only_recall": 0.0682,
+        "median_raw_to_budget": 0.905,
+        "mean_cost_usd": 0.0
+      },
+      "vanilla:gpt-5.4-nano": {
+        "n": 30,
+        "valid": 0,
+        "mean_constraint_recall_after_truncation": 0.1048,
+        "mean_procedure_recall_after_truncation": 0.4638,
+        "mean_validity_weighted_recall": 0.0,
+        "valid_only_recall": null,
+        "median_raw_to_budget": 4.257,
+        "mean_cost_usd": 0.001352
+      },
+      "vanilla:gpt-5.4-mini": {
+        "n": 30,
+        "valid": 0,
+        "mean_constraint_recall_after_truncation": 0.1037,
+        "mean_procedure_recall_after_truncation": 0.4303,
+        "mean_validity_weighted_recall": 0.0,
+        "valid_only_recall": null,
+        "median_raw_to_budget": 4.145,
+        "mean_cost_usd": 0.005209
+      },
+      "vanilla:gpt-6-luna": {
+        "n": 30,
+        "valid": 1,
+        "mean_constraint_recall_after_truncation": 0.2455,
+        "mean_procedure_recall_after_truncation": 0.4313,
+        "mean_validity_weighted_recall": 0.0133,
+        "valid_only_recall": 0.4,
+        "median_raw_to_budget": 1.621,
+        "mean_cost_usd": 0.000936
+      },
+      "vanilla:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 0,
+        "mean_constraint_recall_after_truncation": 0.2326,
+        "mean_procedure_recall_after_truncation": 0.4472,
+        "mean_validity_weighted_recall": 0.0,
+        "valid_only_recall": null,
+        "median_raw_to_budget": 1.505,
+        "mean_cost_usd": 0.001932
+      },
+      "tom_budget:gpt-6-luna": {
+        "n": 30,
+        "valid": 2,
+        "mean_constraint_recall_after_truncation": 0.2344,
+        "mean_procedure_recall_after_truncation": 0.4385,
+        "mean_validity_weighted_recall": 0.0167,
+        "valid_only_recall": 0.25,
+        "median_raw_to_budget": 7.429,
+        "mean_cost_usd": 0.003511
+      },
+      "tom_budget:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 1,
+        "mean_constraint_recall_after_truncation": 0.2467,
+        "mean_procedure_recall_after_truncation": 0.3464,
+        "mean_validity_weighted_recall": 0.0183,
+        "valid_only_recall": 0.55,
+        "median_raw_to_budget": 6.882,
+        "mean_cost_usd": 0.008379
+      },
+      "tom_jev_budget:gpt-6-luna": {
+        "n": 30,
+        "valid": 3,
+        "mean_constraint_recall_after_truncation": 0.2355,
+        "mean_procedure_recall_after_truncation": 0.4082,
+        "mean_validity_weighted_recall": 0.0361,
+        "valid_only_recall": 0.3611,
+        "median_raw_to_budget": 7.826,
+        "mean_cost_usd": 0.004615
+      },
+      "tom_jev_budget:gpt-5.6-luna": {
+        "n": 30,
+        "valid": 6,
+        "mean_constraint_recall_after_truncation": 0.2525,
+        "mean_procedure_recall_after_truncation": 0.4221,
+        "mean_validity_weighted_recall": 0.0639,
+        "valid_only_recall": 0.3194,
+        "median_raw_to_budget": 7.976,
+        "mean_cost_usd": 0.009313
+      },
+      "tom_jev_lines": {
+        "n": 30,
+        "valid": 0,
+        "mean_constraint_recall_after_truncation": 0.3197,
+        "mean_procedure_recall_after_truncation": 0.3742,
+        "mean_validity_weighted_recall": 0.0,
+        "valid_only_recall": null,
+        "median_raw_to_budget": 6.993,
+        "mean_cost_usd": 0.003529
+      }
+    }
+  },
+  "paired": {
+    "tom_jev_lines vs vanilla:gpt-5.6-luna, ratio 0.5": {
+      "difference": 0.3465,
+      "ci95": [
+        0.2783,
+        0.417
+      ],
+      "n": 30
+    },
+    "tom_jev_lines vs vanilla:gpt-5.6-luna, ratio 0.25": {
+      "difference": 0.3878,
+      "ci95": [
+        0.2912,
+        0.494
+      ],
+      "n": 30
+    },
+    "tom_jev_lines vs vanilla:gpt-5.6-luna, ratio 0.1": {
+      "difference": 0.0871,
+      "ci95": [
+        0.0039,
+        0.1703
+      ],
+      "n": 30
+    },
+    "tom_jev_lines vs tom_jev_budget:gpt-6-luna, ratio 0.5": {
+      "difference": 0.1616,
+      "ci95": [
+        0.0923,
+        0.2313
+      ],
+      "n": 30
+    },
+    "tom_jev_lines vs tom_jev_budget:gpt-6-luna, ratio 0.25": {
+      "difference": 0.2061,
+      "ci95": [
+        0.136,
+        0.2847
+      ],
+      "n": 30
+    },
+    "tom_jev_lines vs tom_jev_budget:gpt-6-luna, ratio 0.1": {
+      "difference": 0.0842,
+      "ci95": [
+        0.019,
+        0.1567
+      ],
+      "n": 30
+    },
+    "tom_jev_budget:gpt-6-luna vs tom_budget:gpt-6-luna, ratio 0.5": {
+      "difference": 0.0056,
+      "ci95": [
+        -0.0576,
+        0.0657
+      ],
+      "n": 30
+    },
+    "tom_jev_budget:gpt-6-luna vs tom_budget:gpt-6-luna, ratio 0.25": {
+      "difference": 0.0486,
+      "ci95": [
+        -0.054,
+        0.151
+      ],
+      "n": 30
+    },
+    "tom_jev_budget:gpt-6-luna vs tom_budget:gpt-6-luna, ratio 0.1": {
+      "difference": 0.0011,
+      "ci95": [
+        -0.0582,
+        0.0635
+      ],
+      "n": 30
+    },
+    "tom_jev_budget:gpt-5.6-luna vs tom_budget:gpt-5.6-luna, ratio 0.5": {
+      "difference": -0.0217,
+      "ci95": [
+        -0.0676,
+        0.0251
+      ],
+      "n": 30
+    },
+    "tom_jev_budget:gpt-5.6-luna vs tom_budget:gpt-5.6-luna, ratio 0.25": {
+      "difference": 0.0131,
+      "ci95": [
+        -0.0735,
+        0.0998
+      ],
+      "n": 30
+    },
+    "tom_jev_budget:gpt-5.6-luna vs tom_budget:gpt-5.6-luna, ratio 0.1": {
+      "difference": 0.0058,
+      "ci95": [
+        -0.0791,
+        0.078
+      ],
+      "n": 30
+    }
+  },
+  "validity_weighted_pair": {
+    "Jev line-TOM vs GPT-5.6 Luna, ratio 0.5": {
+      "difference": -0.083,
+      "ci95": [
+        -0.2272,
+        0.0666
+      ],
+      "n": 30
+    },
+    "Jev line-TOM vs GPT-5.6 Luna, ratio 0.25": {
+      "difference": -0.0619,
+      "ci95": [
+        -0.1618,
+        0.037
+      ],
+      "n": 30
+    },
+    "Jev line-TOM vs GPT-5.6 Luna, ratio 0.1": {
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "n": 30
+    }
+  },
+  "run_records": {
+    "curves": 1800,
+    "stability": 3000
+  },
+  "input_hashes": {
+    "src/tom/benchmarks/kt_faithful.py": "eedfe15beb99df043f5539f3eabb8ed7680c99e57186d52963879539eeddaefb",
+    "src/tom/benchmarks/kt_cascade.py": "4c8ba5c6d4abbc5a10c5ffc285068a7ef056214e219d92da22f9c3f6b1c0b34f",
+    "results/kt-benchmark-full/manifest.json": "1ef5facbce2381526f229532850f5aff3a4ae6f89ac27e81b00ee293a88dca63",
+    "results/kt-faithful/cascade-labels.jsonl": "5bd581cfab51baaf9e01e48db338aa65e1ecc4a4a4b8824efc8d882b19f6887d"
+  }
+}

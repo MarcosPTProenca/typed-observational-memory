@@ -1,0 +1,2027 @@
+{
+  "name": "AgentArtifactCorpus sample",
+  "n_files": 327,
+  "stratification": {
+    "other/other": 10,
+    "agents.md/other": 10,
+    "copilot/other": 10,
+    "cursorrules/other": 10,
+    "claude.md/other": 10,
+    "system-prompt/other": 10,
+    "other/ts/js": 10,
+    "agents.md/python": 10,
+    "other/python": 10,
+    "agents.md/go": 10,
+    "claude.md/ts/js": 10,
+    "agents.md/ts/js": 10,
+    "claude.md/php": 10,
+    "other/csharp": 10,
+    "other/rust": 10,
+    "other/go": 10,
+    "agents.md/rust": 10,
+    "agents.md/php": 10,
+    "claude.md/swift": 10,
+    "agents.md/swift": 10,
+    "other/php": 10,
+    "claude.md/rust": 10,
+    "claude.md/go": 10,
+    "claude.md/python": 10,
+    "other/swift": 10,
+    "agents.md/java": 10,
+    "claude.md/jvm": 10,
+    "other/jvm": 10,
+    "agents.md/csharp": 10,
+    "other/java": 10,
+    "agents.md/jvm": 10,
+    "claude.md/csharp": 10,
+    "system-prompt/swift": 1,
+    "claude.md/java": 6
+  },
+  "redactions_applied": 608,
+  "drop_reasons": {
+    "size-out-of-range (113)": 1,
+    "size-out-of-range (172)": 1,
+    "size-out-of-range (83)": 1,
+    "size-out-of-range (91)": 1,
+    "size-out-of-range (85)": 1,
+    "size-out-of-range (67)": 1,
+    "size-out-of-range (69)": 1,
+    "size-out-of-range (77)": 1,
+    "size-out-of-range (23)": 1,
+    "non-permissive-license": 1,
+    "size-out-of-range (107)": 1,
+    "size-out-of-range (65502)": 1,
+    "size-out-of-range (73792)": 1,
+    "size-out-of-range (138)": 1,
+    "size-out-of-range (11)": 8,
+    "size-out-of-range (82)": 1,
+    "size-out-of-range (10)": 2,
+    "size-out-of-range (38)": 1,
+    "size-out-of-range (44)": 1,
+    "size-out-of-range (13)": 1
+  },
+  "files": [
+    {
+      "name": "sample-0000-other.md",
+      "family": "other",
+      "chars": 4124,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0001-other.md",
+      "family": "other",
+      "chars": 285,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0002-other.md",
+      "family": "other",
+      "chars": 1733,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0003-other.md",
+      "family": "other",
+      "chars": 1959,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0004-other.md",
+      "family": "other",
+      "chars": 4415,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0005-other.md",
+      "family": "other",
+      "chars": 1580,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0006-other.md",
+      "family": "other",
+      "chars": 15386,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0007-other.md",
+      "family": "other",
+      "chars": 8418,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0008-other.md",
+      "family": "other",
+      "chars": 1650,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0009-other.md",
+      "family": "other",
+      "chars": 3350,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0010-agents.md",
+      "family": "agents",
+      "chars": 9861,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0011-agents.md",
+      "family": "agents",
+      "chars": 258,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0012-agents.md",
+      "family": "agents",
+      "chars": 3764,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0013-agents.md",
+      "family": "agents",
+      "chars": 4052,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0014-agents.md",
+      "family": "agents",
+      "chars": 1144,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0015-agents.md",
+      "family": "agents",
+      "chars": 2236,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0016-agents.md",
+      "family": "agents",
+      "chars": 2766,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0017-agents.md",
+      "family": "agents",
+      "chars": 2489,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0018-agents.md",
+      "family": "agents",
+      "chars": 3588,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0019-agents.md",
+      "family": "agents",
+      "chars": 8159,
+      "redactions": 7
+    },
+    {
+      "name": "sample-0020-copilot.md",
+      "family": "copilot",
+      "chars": 221,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0021-copilot.md",
+      "family": "copilot",
+      "chars": 5994,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0022-copilot.md",
+      "family": "copilot",
+      "chars": 14505,
+      "redactions": 10
+    },
+    {
+      "name": "sample-0023-copilot.md",
+      "family": "copilot",
+      "chars": 10592,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0024-copilot.md",
+      "family": "copilot",
+      "chars": 4780,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0025-copilot.md",
+      "family": "copilot",
+      "chars": 570,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0026-copilot.md",
+      "family": "copilot",
+      "chars": 1321,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0027-copilot.md",
+      "family": "copilot",
+      "chars": 5322,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0028-copilot.md",
+      "family": "copilot",
+      "chars": 4087,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0029-copilot.md",
+      "family": "copilot",
+      "chars": 577,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0030-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 10371,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0031-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 11505,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0032-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 10699,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0033-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 8244,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0034-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 8703,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0035-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 9960,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0036-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 9684,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0037-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 7925,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0038-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 265,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0039-cursorrules.md",
+      "family": "cursorrules",
+      "chars": 1233,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0040-claude.md",
+      "family": "claude",
+      "chars": 1656,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0041-claude.md",
+      "family": "claude",
+      "chars": 2973,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0042-claude.md",
+      "family": "claude",
+      "chars": 7093,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0043-claude.md",
+      "family": "claude",
+      "chars": 11672,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0044-claude.md",
+      "family": "claude",
+      "chars": 2886,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0045-claude.md",
+      "family": "claude",
+      "chars": 4074,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0046-claude.md",
+      "family": "claude",
+      "chars": 3777,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0047-claude.md",
+      "family": "claude",
+      "chars": 9127,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0048-claude.md",
+      "family": "claude",
+      "chars": 2325,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0049-claude.md",
+      "family": "claude",
+      "chars": 2776,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0050-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 3710,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0051-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 5437,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0052-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 1801,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0053-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 26595,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0054-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 1079,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0055-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 820,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0056-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 1624,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0057-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 1454,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0058-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 4773,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0059-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 9447,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0060-other.md",
+      "family": "other",
+      "chars": 1475,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0061-other.md",
+      "family": "other",
+      "chars": 45541,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0062-other.md",
+      "family": "other",
+      "chars": 12330,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0063-other.md",
+      "family": "other",
+      "chars": 15985,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0064-other.md",
+      "family": "other",
+      "chars": 2885,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0065-other.md",
+      "family": "other",
+      "chars": 4685,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0066-other.md",
+      "family": "other",
+      "chars": 13350,
+      "redactions": 5
+    },
+    {
+      "name": "sample-0067-other.md",
+      "family": "other",
+      "chars": 1696,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0068-other.md",
+      "family": "other",
+      "chars": 1936,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0069-other.md",
+      "family": "other",
+      "chars": 4306,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0070-agents.md",
+      "family": "agents",
+      "chars": 5044,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0071-agents.md",
+      "family": "agents",
+      "chars": 3916,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0072-agents.md",
+      "family": "agents",
+      "chars": 1535,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0073-agents.md",
+      "family": "agents",
+      "chars": 1783,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0074-agents.md",
+      "family": "agents",
+      "chars": 2236,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0075-agents.md",
+      "family": "agents",
+      "chars": 1873,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0076-agents.md",
+      "family": "agents",
+      "chars": 9917,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0077-agents.md",
+      "family": "agents",
+      "chars": 3776,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0078-agents.md",
+      "family": "agents",
+      "chars": 2629,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0079-agents.md",
+      "family": "agents",
+      "chars": 1785,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0080-other.md",
+      "family": "other",
+      "chars": 10633,
+      "redactions": 7
+    },
+    {
+      "name": "sample-0081-other.md",
+      "family": "other",
+      "chars": 10703,
+      "redactions": 8
+    },
+    {
+      "name": "sample-0082-other.md",
+      "family": "other",
+      "chars": 758,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0083-other.md",
+      "family": "other",
+      "chars": 7032,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0084-other.md",
+      "family": "other",
+      "chars": 1046,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0085-other.md",
+      "family": "other",
+      "chars": 9506,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0086-other.md",
+      "family": "other",
+      "chars": 11888,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0087-other.md",
+      "family": "other",
+      "chars": 12943,
+      "redactions": 23
+    },
+    {
+      "name": "sample-0088-other.md",
+      "family": "other",
+      "chars": 8654,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0089-other.md",
+      "family": "other",
+      "chars": 1058,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0090-agents.md",
+      "family": "agents",
+      "chars": 654,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0091-agents.md",
+      "family": "agents",
+      "chars": 2094,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0092-agents.md",
+      "family": "agents",
+      "chars": 10919,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0093-agents.md",
+      "family": "agents",
+      "chars": 2241,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0094-agents.md",
+      "family": "agents",
+      "chars": 393,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0095-agents.md",
+      "family": "agents",
+      "chars": 2472,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0096-agents.md",
+      "family": "agents",
+      "chars": 4536,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0097-agents.md",
+      "family": "agents",
+      "chars": 5299,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0098-agents.md",
+      "family": "agents",
+      "chars": 7753,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0099-agents.md",
+      "family": "agents",
+      "chars": 2375,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0100-claude.md",
+      "family": "claude",
+      "chars": 625,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0101-claude.md",
+      "family": "claude",
+      "chars": 10474,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0102-claude.md",
+      "family": "claude",
+      "chars": 2103,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0103-claude.md",
+      "family": "claude",
+      "chars": 4529,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0104-claude.md",
+      "family": "claude",
+      "chars": 5993,
+      "redactions": 4
+    },
+    {
+      "name": "sample-0105-claude.md",
+      "family": "claude",
+      "chars": 1975,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0106-claude.md",
+      "family": "claude",
+      "chars": 2540,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0107-claude.md",
+      "family": "claude",
+      "chars": 863,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0108-claude.md",
+      "family": "claude",
+      "chars": 3978,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0109-claude.md",
+      "family": "claude",
+      "chars": 4996,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0110-agents.md",
+      "family": "agents",
+      "chars": 3992,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0111-agents.md",
+      "family": "agents",
+      "chars": 2521,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0112-agents.md",
+      "family": "agents",
+      "chars": 3691,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0113-agents.md",
+      "family": "agents",
+      "chars": 251,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0114-agents.md",
+      "family": "agents",
+      "chars": 2080,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0115-agents.md",
+      "family": "agents",
+      "chars": 7967,
+      "redactions": 6
+    },
+    {
+      "name": "sample-0116-agents.md",
+      "family": "agents",
+      "chars": 2198,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0117-agents.md",
+      "family": "agents",
+      "chars": 260,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0118-agents.md",
+      "family": "agents",
+      "chars": 2022,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0119-agents.md",
+      "family": "agents",
+      "chars": 2143,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0120-claude.md",
+      "family": "claude",
+      "chars": 13414,
+      "redactions": 8
+    },
+    {
+      "name": "sample-0121-claude.md",
+      "family": "claude",
+      "chars": 11803,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0122-claude.md",
+      "family": "claude",
+      "chars": 420,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0123-claude.md",
+      "family": "claude",
+      "chars": 6865,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0124-claude.md",
+      "family": "claude",
+      "chars": 17076,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0125-claude.md",
+      "family": "claude",
+      "chars": 1091,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0126-claude.md",
+      "family": "claude",
+      "chars": 1986,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0127-claude.md",
+      "family": "claude",
+      "chars": 15769,
+      "redactions": 16
+    },
+    {
+      "name": "sample-0128-claude.md",
+      "family": "claude",
+      "chars": 3205,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0129-claude.md",
+      "family": "claude",
+      "chars": 12520,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0130-other.md",
+      "family": "other",
+      "chars": 1861,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0131-other.md",
+      "family": "other",
+      "chars": 20812,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0132-other.md",
+      "family": "other",
+      "chars": 7069,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0133-other.md",
+      "family": "other",
+      "chars": 18755,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0134-other.md",
+      "family": "other",
+      "chars": 12181,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0135-other.md",
+      "family": "other",
+      "chars": 11355,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0136-other.md",
+      "family": "other",
+      "chars": 18754,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0137-other.md",
+      "family": "other",
+      "chars": 21419,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0138-other.md",
+      "family": "other",
+      "chars": 9715,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0139-other.md",
+      "family": "other",
+      "chars": 12979,
+      "redactions": 7
+    },
+    {
+      "name": "sample-0140-other.md",
+      "family": "other",
+      "chars": 3060,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0141-other.md",
+      "family": "other",
+      "chars": 797,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0142-other.md",
+      "family": "other",
+      "chars": 15310,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0143-other.md",
+      "family": "other",
+      "chars": 15584,
+      "redactions": 19
+    },
+    {
+      "name": "sample-0144-other.md",
+      "family": "other",
+      "chars": 3672,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0145-other.md",
+      "family": "other",
+      "chars": 2171,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0146-other.md",
+      "family": "other",
+      "chars": 7555,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0147-other.md",
+      "family": "other",
+      "chars": 1903,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0148-other.md",
+      "family": "other",
+      "chars": 5797,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0149-other.md",
+      "family": "other",
+      "chars": 1118,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0150-other.md",
+      "family": "other",
+      "chars": 342,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0151-other.md",
+      "family": "other",
+      "chars": 516,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0152-other.md",
+      "family": "other",
+      "chars": 1653,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0153-other.md",
+      "family": "other",
+      "chars": 11336,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0154-other.md",
+      "family": "other",
+      "chars": 6099,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0155-other.md",
+      "family": "other",
+      "chars": 5877,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0156-other.md",
+      "family": "other",
+      "chars": 4610,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0157-other.md",
+      "family": "other",
+      "chars": 4733,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0158-other.md",
+      "family": "other",
+      "chars": 3828,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0159-other.md",
+      "family": "other",
+      "chars": 3005,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0160-agents.md",
+      "family": "agents",
+      "chars": 11986,
+      "redactions": 7
+    },
+    {
+      "name": "sample-0161-agents.md",
+      "family": "agents",
+      "chars": 2609,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0162-agents.md",
+      "family": "agents",
+      "chars": 2866,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0163-agents.md",
+      "family": "agents",
+      "chars": 1760,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0164-agents.md",
+      "family": "agents",
+      "chars": 9679,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0165-agents.md",
+      "family": "agents",
+      "chars": 1124,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0166-agents.md",
+      "family": "agents",
+      "chars": 2169,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0167-agents.md",
+      "family": "agents",
+      "chars": 491,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0168-agents.md",
+      "family": "agents",
+      "chars": 2831,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0169-agents.md",
+      "family": "agents",
+      "chars": 4264,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0170-agents.md",
+      "family": "agents",
+      "chars": 2733,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0171-agents.md",
+      "family": "agents",
+      "chars": 3284,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0172-agents.md",
+      "family": "agents",
+      "chars": 5403,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0173-agents.md",
+      "family": "agents",
+      "chars": 13414,
+      "redactions": 8
+    },
+    {
+      "name": "sample-0174-agents.md",
+      "family": "agents",
+      "chars": 7677,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0175-agents.md",
+      "family": "agents",
+      "chars": 499,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0176-agents.md",
+      "family": "agents",
+      "chars": 515,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0177-agents.md",
+      "family": "agents",
+      "chars": 1009,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0178-agents.md",
+      "family": "agents",
+      "chars": 15924,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0179-agents.md",
+      "family": "agents",
+      "chars": 10911,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0180-claude.md",
+      "family": "claude",
+      "chars": 10613,
+      "redactions": 9
+    },
+    {
+      "name": "sample-0181-claude.md",
+      "family": "claude",
+      "chars": 6936,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0182-claude.md",
+      "family": "claude",
+      "chars": 23140,
+      "redactions": 10
+    },
+    {
+      "name": "sample-0183-claude.md",
+      "family": "claude",
+      "chars": 23944,
+      "redactions": 14
+    },
+    {
+      "name": "sample-0184-claude.md",
+      "family": "claude",
+      "chars": 5757,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0185-claude.md",
+      "family": "claude",
+      "chars": 4145,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0186-claude.md",
+      "family": "claude",
+      "chars": 11958,
+      "redactions": 13
+    },
+    {
+      "name": "sample-0187-claude.md",
+      "family": "claude",
+      "chars": 10194,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0188-claude.md",
+      "family": "claude",
+      "chars": 1761,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0189-claude.md",
+      "family": "claude",
+      "chars": 8796,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0190-agents.md",
+      "family": "agents",
+      "chars": 15654,
+      "redactions": 4
+    },
+    {
+      "name": "sample-0191-agents.md",
+      "family": "agents",
+      "chars": 4950,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0192-agents.md",
+      "family": "agents",
+      "chars": 284,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0193-agents.md",
+      "family": "agents",
+      "chars": 4993,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0194-agents.md",
+      "family": "agents",
+      "chars": 1658,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0195-agents.md",
+      "family": "agents",
+      "chars": 12042,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0196-agents.md",
+      "family": "agents",
+      "chars": 712,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0197-agents.md",
+      "family": "agents",
+      "chars": 3840,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0198-agents.md",
+      "family": "agents",
+      "chars": 2975,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0199-agents.md",
+      "family": "agents",
+      "chars": 2657,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0200-other.md",
+      "family": "other",
+      "chars": 37305,
+      "redactions": 6
+    },
+    {
+      "name": "sample-0201-other.md",
+      "family": "other",
+      "chars": 5210,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0202-other.md",
+      "family": "other",
+      "chars": 7237,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0203-other.md",
+      "family": "other",
+      "chars": 3451,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0204-other.md",
+      "family": "other",
+      "chars": 8861,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0205-other.md",
+      "family": "other",
+      "chars": 333,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0206-other.md",
+      "family": "other",
+      "chars": 2703,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0207-other.md",
+      "family": "other",
+      "chars": 2466,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0208-other.md",
+      "family": "other",
+      "chars": 1517,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0209-other.md",
+      "family": "other",
+      "chars": 10789,
+      "redactions": 4
+    },
+    {
+      "name": "sample-0210-claude.md",
+      "family": "claude",
+      "chars": 9915,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0211-claude.md",
+      "family": "claude",
+      "chars": 1489,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0212-claude.md",
+      "family": "claude",
+      "chars": 3364,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0213-claude.md",
+      "family": "claude",
+      "chars": 15046,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0214-claude.md",
+      "family": "claude",
+      "chars": 1740,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0215-claude.md",
+      "family": "claude",
+      "chars": 34305,
+      "redactions": 43
+    },
+    {
+      "name": "sample-0216-claude.md",
+      "family": "claude",
+      "chars": 8196,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0217-claude.md",
+      "family": "claude",
+      "chars": 6431,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0218-claude.md",
+      "family": "claude",
+      "chars": 1920,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0219-claude.md",
+      "family": "claude",
+      "chars": 4911,
+      "redactions": 9
+    },
+    {
+      "name": "sample-0220-claude.md",
+      "family": "claude",
+      "chars": 1664,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0221-claude.md",
+      "family": "claude",
+      "chars": 3422,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0222-claude.md",
+      "family": "claude",
+      "chars": 1246,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0223-claude.md",
+      "family": "claude",
+      "chars": 5945,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0224-claude.md",
+      "family": "claude",
+      "chars": 25822,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0225-claude.md",
+      "family": "claude",
+      "chars": 4605,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0226-claude.md",
+      "family": "claude",
+      "chars": 4172,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0227-claude.md",
+      "family": "claude",
+      "chars": 4272,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0228-claude.md",
+      "family": "claude",
+      "chars": 5634,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0229-claude.md",
+      "family": "claude",
+      "chars": 5347,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0230-claude.md",
+      "family": "claude",
+      "chars": 2320,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0231-claude.md",
+      "family": "claude",
+      "chars": 4509,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0232-claude.md",
+      "family": "claude",
+      "chars": 2433,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0233-claude.md",
+      "family": "claude",
+      "chars": 2685,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0234-claude.md",
+      "family": "claude",
+      "chars": 5259,
+      "redactions": 6
+    },
+    {
+      "name": "sample-0235-claude.md",
+      "family": "claude",
+      "chars": 5298,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0236-claude.md",
+      "family": "claude",
+      "chars": 9342,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0237-claude.md",
+      "family": "claude",
+      "chars": 2053,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0238-claude.md",
+      "family": "claude",
+      "chars": 1810,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0239-claude.md",
+      "family": "claude",
+      "chars": 479,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0240-other.md",
+      "family": "other",
+      "chars": 1860,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0241-other.md",
+      "family": "other",
+      "chars": 12769,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0242-other.md",
+      "family": "other",
+      "chars": 2468,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0243-other.md",
+      "family": "other",
+      "chars": 19734,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0244-other.md",
+      "family": "other",
+      "chars": 9065,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0245-other.md",
+      "family": "other",
+      "chars": 14204,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0246-other.md",
+      "family": "other",
+      "chars": 8466,
+      "redactions": 4
+    },
+    {
+      "name": "sample-0247-other.md",
+      "family": "other",
+      "chars": 5289,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0248-other.md",
+      "family": "other",
+      "chars": 5337,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0249-other.md",
+      "family": "other",
+      "chars": 10427,
+      "redactions": 7
+    },
+    {
+      "name": "sample-0250-agents.md",
+      "family": "agents",
+      "chars": 1800,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0251-agents.md",
+      "family": "agents",
+      "chars": 858,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0252-agents.md",
+      "family": "agents",
+      "chars": 4012,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0253-agents.md",
+      "family": "agents",
+      "chars": 5509,
+      "redactions": 4
+    },
+    {
+      "name": "sample-0254-agents.md",
+      "family": "agents",
+      "chars": 7124,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0255-agents.md",
+      "family": "agents",
+      "chars": 2775,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0256-agents.md",
+      "family": "agents",
+      "chars": 2383,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0257-agents.md",
+      "family": "agents",
+      "chars": 5438,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0258-agents.md",
+      "family": "agents",
+      "chars": 2212,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0259-agents.md",
+      "family": "agents",
+      "chars": 1668,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0260-claude.md",
+      "family": "claude",
+      "chars": 3902,
+      "redactions": 5
+    },
+    {
+      "name": "sample-0261-claude.md",
+      "family": "claude",
+      "chars": 441,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0262-claude.md",
+      "family": "claude",
+      "chars": 6820,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0263-claude.md",
+      "family": "claude",
+      "chars": 744,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0264-claude.md",
+      "family": "claude",
+      "chars": 2664,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0265-claude.md",
+      "family": "claude",
+      "chars": 858,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0266-claude.md",
+      "family": "claude",
+      "chars": 6883,
+      "redactions": 16
+    },
+    {
+      "name": "sample-0267-claude.md",
+      "family": "claude",
+      "chars": 2698,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0268-claude.md",
+      "family": "claude",
+      "chars": 487,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0269-claude.md",
+      "family": "claude",
+      "chars": 5330,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0270-other.md",
+      "family": "other",
+      "chars": 19669,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0271-other.md",
+      "family": "other",
+      "chars": 7278,
+      "redactions": 8
+    },
+    {
+      "name": "sample-0272-other.md",
+      "family": "other",
+      "chars": 1175,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0273-other.md",
+      "family": "other",
+      "chars": 5174,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0274-other.md",
+      "family": "other",
+      "chars": 10327,
+      "redactions": 5
+    },
+    {
+      "name": "sample-0275-other.md",
+      "family": "other",
+      "chars": 10979,
+      "redactions": 15
+    },
+    {
+      "name": "sample-0276-other.md",
+      "family": "other",
+      "chars": 12796,
+      "redactions": 18
+    },
+    {
+      "name": "sample-0277-other.md",
+      "family": "other",
+      "chars": 4269,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0278-other.md",
+      "family": "other",
+      "chars": 9765,
+      "redactions": 10
+    },
+    {
+      "name": "sample-0279-other.md",
+      "family": "other",
+      "chars": 389,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0280-agents.md",
+      "family": "agents",
+      "chars": 2596,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0281-agents.md",
+      "family": "agents",
+      "chars": 9707,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0282-agents.md",
+      "family": "agents",
+      "chars": 14054,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0283-agents.md",
+      "family": "agents",
+      "chars": 302,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0284-agents.md",
+      "family": "agents",
+      "chars": 1927,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0285-agents.md",
+      "family": "agents",
+      "chars": 4550,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0286-agents.md",
+      "family": "agents",
+      "chars": 7892,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0287-agents.md",
+      "family": "agents",
+      "chars": 7166,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0288-agents.md",
+      "family": "agents",
+      "chars": 3919,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0289-agents.md",
+      "family": "agents",
+      "chars": 2956,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0290-other.md",
+      "family": "other",
+      "chars": 4189,
+      "redactions": 17
+    },
+    {
+      "name": "sample-0291-other.md",
+      "family": "other",
+      "chars": 3093,
+      "redactions": 21
+    },
+    {
+      "name": "sample-0292-other.md",
+      "family": "other",
+      "chars": 1540,
+      "redactions": 13
+    },
+    {
+      "name": "sample-0293-other.md",
+      "family": "other",
+      "chars": 6591,
+      "redactions": 30
+    },
+    {
+      "name": "sample-0294-other.md",
+      "family": "other",
+      "chars": 9975,
+      "redactions": 13
+    },
+    {
+      "name": "sample-0295-other.md",
+      "family": "other",
+      "chars": 3533,
+      "redactions": 4
+    },
+    {
+      "name": "sample-0296-other.md",
+      "family": "other",
+      "chars": 3531,
+      "redactions": 4
+    },
+    {
+      "name": "sample-0297-other.md",
+      "family": "other",
+      "chars": 12884,
+      "redactions": 12
+    },
+    {
+      "name": "sample-0298-other.md",
+      "family": "other",
+      "chars": 4189,
+      "redactions": 17
+    },
+    {
+      "name": "sample-0299-other.md",
+      "family": "other",
+      "chars": 934,
+      "redactions": 11
+    },
+    {
+      "name": "sample-0300-agents.md",
+      "family": "agents",
+      "chars": 744,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0301-agents.md",
+      "family": "agents",
+      "chars": 3544,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0302-agents.md",
+      "family": "agents",
+      "chars": 1192,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0303-agents.md",
+      "family": "agents",
+      "chars": 5309,
+      "redactions": 2
+    },
+    {
+      "name": "sample-0304-agents.md",
+      "family": "agents",
+      "chars": 4890,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0305-agents.md",
+      "family": "agents",
+      "chars": 996,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0306-agents.md",
+      "family": "agents",
+      "chars": 2255,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0307-agents.md",
+      "family": "agents",
+      "chars": 5618,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0308-agents.md",
+      "family": "agents",
+      "chars": 3496,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0309-agents.md",
+      "family": "agents",
+      "chars": 2749,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0310-claude.md",
+      "family": "claude",
+      "chars": 3203,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0311-claude.md",
+      "family": "claude",
+      "chars": 3661,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0312-claude.md",
+      "family": "claude",
+      "chars": 8519,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0313-claude.md",
+      "family": "claude",
+      "chars": 6586,
+      "redactions": 1
+    },
+    {
+      "name": "sample-0314-claude.md",
+      "family": "claude",
+      "chars": 2319,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0315-claude.md",
+      "family": "claude",
+      "chars": 3914,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0316-claude.md",
+      "family": "claude",
+      "chars": 8087,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0317-claude.md",
+      "family": "claude",
+      "chars": 7667,
+      "redactions": 3
+    },
+    {
+      "name": "sample-0318-claude.md",
+      "family": "claude",
+      "chars": 10104,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0319-claude.md",
+      "family": "claude",
+      "chars": 4797,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0320-system-prompt.md",
+      "family": "system-prompt",
+      "chars": 19891,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0321-claude.md",
+      "family": "claude",
+      "chars": 5153,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0322-claude.md",
+      "family": "claude",
+      "chars": 5639,
+      "redactions": 19
+    },
+    {
+      "name": "sample-0323-claude.md",
+      "family": "claude",
+      "chars": 2212,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0324-claude.md",
+      "family": "claude",
+      "chars": 4709,
+      "redactions": 0
+    },
+    {
+      "name": "sample-0325-claude.md",
+      "family": "claude",
+      "chars": 30404,
+      "redactions": 8
+    },
+    {
+      "name": "sample-0326-claude.md",
+      "family": "claude",
+      "chars": 2156,
+      "redactions": 0
+    }
+  ]
+}

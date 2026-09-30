@@ -1,0 +1,1 @@
+{"arm": "tom_budget:gpt-6-luna", "config": "sample-0023-copilot.md", "round": 5, "budget": 64, "raw_chars": 0, "overshoot": false, "cost_usd": 0.00029970000000001384, "latency_s": 3.955, "c_recall": 0.0, "output_text": ""}

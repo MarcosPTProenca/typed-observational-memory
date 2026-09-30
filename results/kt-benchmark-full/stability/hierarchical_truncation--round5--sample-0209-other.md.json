@@ -1,0 +1,1 @@
+{"arm": "hierarchical_truncation", "config": "sample-0209-other.md", "round": 5, "budget": 64, "raw_chars": 176, "overshoot": false, "cost_usd": 0.0, "latency_s": 0.0, "c_recall": 0.0, "output_text": "name: php-mcp-server-generator\ndescription: 'Generate a complete PHP Model Context Protocol server project with tools, resources, prompts, and tests using the official PHP SDK'"}

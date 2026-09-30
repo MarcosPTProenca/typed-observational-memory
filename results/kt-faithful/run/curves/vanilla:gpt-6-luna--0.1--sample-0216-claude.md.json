@@ -1,0 +1,1 @@
+{"arm": "vanilla:gpt-6-luna", "config": "sample-0216-claude.md", "ratio": 0.1, "budget": 166, "raw_chars": 0, "overshoot": false, "cost_usd": 0.0007260000000000044, "per_type": {"constraint": 0.125, "procedural": 0.0, "belief": 0.0, "preference": 0.0, "episodic": NaN}, "output_text": ""}

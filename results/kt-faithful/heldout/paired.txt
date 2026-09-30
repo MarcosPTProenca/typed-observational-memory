@@ -1,0 +1,15 @@
+fresh configs 30
+tom:gpt-6-luna n 30 constraint 0.779 proc 0.805 overshoot 0.9 median raw/budget 1.62 cost 0.105
+tom_budget:gpt-6-luna n 30 constraint 0.741 proc 0.805 overshoot 0.83 median raw/budget 1.09 cost 0.107
+tom_jev_budget:gpt-6-luna n 30 constraint 0.752 proc 0.858 overshoot 0.8 median raw/budget 1.09 cost 0.138
+vanilla:gpt-6-luna n 30 constraint 0.457 proc 0.794 overshoot 0.57 median raw/budget 1.09 cost 0.027
+constraint
+  tom_budget - tom (30, -0.039, (-0.107, 0.019))
+  tom_jev_budget - tom_budget (30, 0.012, (-0.07, 0.103))
+  tom_budget - vanilla (30, 0.283, (0.178, 0.39))
+  tom_jev_budget - vanilla (30, 0.295, (0.186, 0.4))
+procedural
+  tom_budget - tom (30, 0.0, (-0.028, 0.031))
+  tom_jev_budget - tom_budget (30, 0.054, (0.023, 0.088))
+  tom_budget - vanilla (30, 0.01, (-0.048, 0.076))
+  tom_jev_budget - vanilla (30, 0.064, (0.001, 0.146))

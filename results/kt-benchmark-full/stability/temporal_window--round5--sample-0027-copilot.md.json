@@ -1,0 +1,1 @@
+{"arm": "temporal_window", "config": "sample-0027-copilot.md", "round": 5, "budget": 64, "raw_chars": 132, "overshoot": false, "cost_usd": 0.0, "latency_s": 0.0, "c_recall": 0.0, "output_text": "there are also additional rules for AI agents in the `./backend/AGENTS.md` and `./frontend/AGENTS.md`, make sure to check those rule"}

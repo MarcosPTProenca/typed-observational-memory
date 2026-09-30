@@ -1,0 +1,70 @@
+{
+  "started_utc": "2026-09-30T00:48:39.899610+00:00",
+  "git_sha": "HEAD",
+  "args": {
+    "data_dir": "data/aac/sample",
+    "n": 10,
+    "seed": 11,
+    "labels": "results/kt-faithful/cascade-labels.jsonl",
+    "output": "results/kt-benchmark-latency",
+    "arms": "hierarchical_truncation,vanilla:gpt-5.4-nano,vanilla:gpt-5.4-mini,vanilla:gpt-6-luna,vanilla:gpt-5.6-luna,tom_budget:gpt-6-luna,tom_budget:gpt-5.6-luna,tom_jev_budget:gpt-6-luna,tom_jev_budget:gpt-5.6-luna,tom_jev_lines",
+    "phase": "curves",
+    "ratios": "0.5",
+    "heldout_from": 0,
+    "max_cost_usd": 5.0,
+    "workers": 1
+  },
+  "arms": [
+    "hierarchical_truncation",
+    "vanilla:gpt-5.4-nano",
+    "vanilla:gpt-5.4-mini",
+    "vanilla:gpt-6-luna",
+    "vanilla:gpt-5.6-luna",
+    "tom_budget:gpt-6-luna",
+    "tom_budget:gpt-5.6-luna",
+    "tom_jev_budget:gpt-6-luna",
+    "tom_jev_budget:gpt-5.6-luna",
+    "tom_jev_lines"
+  ],
+  "configs": [
+    "sample-0271-other.md",
+    "sample-0040-claude.md",
+    "sample-0187-claude.md",
+    "sample-0223-claude.md",
+    "sample-0298-other.md",
+    "sample-0081-other.md",
+    "sample-0091-agents.md",
+    "sample-0127-claude.md",
+    "sample-0139-other.md",
+    "sample-0128-claude.md"
+  ],
+  "prices_usd_per_million": {
+    "text-embedding-3-large": [
+      0.13,
+      0.0
+    ],
+    "gpt-5.4-mini": [
+      0.75,
+      4.5
+    ],
+    "gpt-5.4-nano": [
+      0.2,
+      1.25
+    ],
+    "gpt-6-luna": [
+      0.1,
+      0.5
+    ],
+    "gpt-5.6-luna": [
+      0.2,
+      1.2
+    ]
+  },
+  "jev_usd_per_million_input": 0.042,
+  "label_stages": {
+    "llm": 754,
+    "encoder": 50,
+    "regex": 42
+  },
+  "notes": "cascade labels (regex->text-embedding-3-large->gpt-5.4-mini) score only; arms see raw text; outputs truncated to budget*4 chars before scoring"
+}

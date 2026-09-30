@@ -1,0 +1,1 @@
+{"arm": "aggressive_pruning", "config": "sample-0119-agents.md", "ratio": 0.25, "budget": 117, "raw_chars": 0, "overshoot": false, "cost_usd": 0.0, "latency_s": 0.0, "per_type": {"constraint": 0.0, "procedural": 0.0, "belief": 0.0, "preference": 0.0, "episodic": NaN}, "output_text": ""}

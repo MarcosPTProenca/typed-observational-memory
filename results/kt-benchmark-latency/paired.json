@@ -1,0 +1,542 @@
+{
+  "tom_budget:gpt-5.6-luna - hierarchical_truncation": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2307,
+      "ci95": [
+        -0.0183,
+        0.4676
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-5.6-luna - tom_budget:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.0256,
+      "ci95": [
+        -0.0592,
+        0.1075
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-5.6-luna - tom_jev_budget:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.0052,
+      "ci95": [
+        -0.0725,
+        0.0962
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-5.6-luna - tom_jev_budget:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.0096,
+      "ci95": [
+        -0.0749,
+        0.0607
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-5.6-luna - tom_jev_lines": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.2079,
+      "ci95": [
+        -0.3396,
+        -0.0809
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-5.6-luna - vanilla:gpt-5.4-mini": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.233,
+      "ci95": [
+        0.0283,
+        0.4493
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-5.6-luna - vanilla:gpt-5.4-nano": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2303,
+      "ci95": [
+        -0.0314,
+        0.486
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-5.6-luna - vanilla:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.1377,
+      "ci95": [
+        -0.0417,
+        0.3218
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-5.6-luna - vanilla:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2208,
+      "ci95": [
+        0.0628,
+        0.382
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - hierarchical_truncation": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2051,
+      "ci95": [
+        -0.033,
+        0.4222
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - tom_budget:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.0256,
+      "ci95": [
+        -0.1075,
+        0.0592
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - tom_jev_budget:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.0204,
+      "ci95": [
+        -0.1261,
+        0.093
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - tom_jev_budget:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.0352,
+      "ci95": [
+        -0.1124,
+        0.0384
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - tom_jev_lines": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.2336,
+      "ci95": [
+        -0.3567,
+        -0.109
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - vanilla:gpt-5.4-mini": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2074,
+      "ci95": [
+        0.0099,
+        0.3965
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - vanilla:gpt-5.4-nano": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2047,
+      "ci95": [
+        -0.0479,
+        0.4367
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - vanilla:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.1121,
+      "ci95": [
+        -0.0641,
+        0.2823
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_budget:gpt-6-luna - vanilla:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.1952,
+      "ci95": [
+        0.0466,
+        0.3426
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - hierarchical_truncation": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2255,
+      "ci95": [
+        -0.0331,
+        0.4788
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - tom_budget:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.0052,
+      "ci95": [
+        -0.0962,
+        0.0725
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - tom_budget:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.0204,
+      "ci95": [
+        -0.0928,
+        0.1266
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - tom_jev_budget:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.0148,
+      "ci95": [
+        -0.1024,
+        0.0674
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - tom_jev_lines": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.2131,
+      "ci95": [
+        -0.3696,
+        -0.0758
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - vanilla:gpt-5.4-mini": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2278,
+      "ci95": [
+        -0.011,
+        0.4693
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - vanilla:gpt-5.4-nano": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2251,
+      "ci95": [
+        -0.0443,
+        0.4875
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - vanilla:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.1325,
+      "ci95": [
+        -0.0511,
+        0.3259
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-5.6-luna - vanilla:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2156,
+      "ci95": [
+        0.0475,
+        0.3957
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - hierarchical_truncation": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2403,
+      "ci95": [
+        0.0024,
+        0.4684
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - tom_budget:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.0096,
+      "ci95": [
+        -0.0607,
+        0.0749
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - tom_budget:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.0352,
+      "ci95": [
+        -0.0377,
+        0.1125
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - tom_jev_budget:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.0148,
+      "ci95": [
+        -0.0674,
+        0.1024
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - tom_jev_lines": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": -0.1983,
+      "ci95": [
+        -0.3122,
+        -0.0883
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - vanilla:gpt-5.4-mini": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2426,
+      "ci95": [
+        0.0476,
+        0.4479
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - vanilla:gpt-5.4-nano": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2399,
+      "ci95": [
+        -0.0071,
+        0.4782
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - vanilla:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.1473,
+      "ci95": [
+        -0.0225,
+        0.3253
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_budget:gpt-6-luna - vanilla:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2304,
+      "ci95": [
+        0.0881,
+        0.3905
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - hierarchical_truncation": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.4386,
+      "ci95": [
+        0.2706,
+        0.6015
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - tom_budget:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2079,
+      "ci95": [
+        0.0809,
+        0.34
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - tom_budget:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2336,
+      "ci95": [
+        0.1094,
+        0.3567
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - tom_jev_budget:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.2131,
+      "ci95": [
+        0.0758,
+        0.3698
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - tom_jev_budget:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.1983,
+      "ci95": [
+        0.0883,
+        0.3122
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - vanilla:gpt-5.4-mini": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.4409,
+      "ci95": [
+        0.2918,
+        0.5921
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - vanilla:gpt-5.4-nano": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.4382,
+      "ci95": [
+        0.2636,
+        0.6071
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - vanilla:gpt-5.6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.3456,
+      "ci95": [
+        0.1849,
+        0.4996
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  },
+  "tom_jev_lines - vanilla:gpt-6-luna": {
+    "ratio_0.5": {
+      "n": 10,
+      "mean_diff": 0.4287,
+      "ci95": [
+        0.294,
+        0.5514
+      ]
+    },
+    "round_1": null,
+    "round_5": null
+  }
+}

@@ -1,0 +1,1368 @@
+{
+  "distinct_lines": 4873,
+  "agreement": 0.5863,
+  "cohen_kappa": 0.4507,
+  "per_type": {
+    "constraint": {
+      "support": 532,
+      "predicted": 1365,
+      "precision": 0.3429,
+      "recall": 0.8797
+    },
+    "procedural": {
+      "support": 1780,
+      "predicted": 1827,
+      "precision": 0.7367,
+      "recall": 0.7562
+    },
+    "belief": {
+      "support": 1887,
+      "predicted": 870,
+      "precision": 0.9264,
+      "recall": 0.4271
+    },
+    "preference": {
+      "support": 630,
+      "predicted": 352,
+      "precision": 0.5682,
+      "recall": 0.3175
+    },
+    "episodic": {
+      "support": 44,
+      "predicted": 459,
+      "precision": 0.0806,
+      "recall": 0.8409
+    }
+  },
+  "confusion": {
+    "constraint": {
+      "constraint": 468,
+      "procedural": 36,
+      "belief": 11,
+      "preference": 5,
+      "episodic": 12
+    },
+    "procedural": {
+      "constraint": 233,
+      "procedural": 1346,
+      "belief": 28,
+      "preference": 33,
+      "episodic": 140
+    },
+    "belief": {
+      "constraint": 338,
+      "procedural": 373,
+      "belief": 806,
+      "preference": 112,
+      "episodic": 258
+    },
+    "preference": {
+      "constraint": 326,
+      "procedural": 68,
+      "belief": 24,
+      "preference": 200,
+      "episodic": 12
+    },
+    "episodic": {
+      "constraint": 0,
+      "procedural": 4,
+      "belief": 1,
+      "preference": 2,
+      "episodic": 37
+    }
+  },
+  "by_cascade_stage": {
+    "llm": {
+      "n": 4272,
+      "agreement": 0.5613
+    },
+    "regex": {
+      "n": 272,
+      "agreement": 0.8382
+    },
+    "encoder": {
+      "n": 329,
+      "agreement": 0.7021
+    }
+  },
+  "disagreement_samples": {
+    "belief->procedural": [
+      {
+        "text": "\"\"\"Context manager for timing and logging operations.\"\"\"",
+        "cascade": "belief",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Audio meter scaling**: RMS value scaled 3x for visibility (`level * 3`)",
+        "cascade": "belief",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Authentication**: Bearer token from Firebase Auth added to requests when available",
+        "cascade": "belief",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Browser Automation Insights**:",
+        "cascade": "belief",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Data access**: `$input.all()` or `items` array",
+        "cascade": "belief",
+        "jev": "procedural",
+        "stage": "llm"
+      }
+    ],
+    "belief->constraint": [
+      {
+        "text": "\"\"\"Input model for user creation.\"\"\"",
+        "cascade": "belief",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "\"\"\"Raised when rate limit is exceeded.\"\"\"",
+        "cascade": "belief",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "\"Can I use pandas in Python Code node?\"",
+        "cascade": "belief",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "\"Rate limit approaching\",",
+        "cascade": "belief",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "\"apiKey\": \"${GOOGLE_API_KEY}\"",
+        "cascade": "belief",
+        "jev": "constraint",
+        "stage": "llm"
+      }
+    ],
+    "preference->constraint": [
+      {
+        "text": "\"NOTE: This AI is tuned specifically to be cynical and politically-minded. Don't believe everything it says. Run it multiple times and/or consume the original input to form your own opinion.\"",
+        "cascade": "preference",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "**Adopt consistent `snake_case` naming.** This applies to variables, tasks, files, and role names. Prefix role names with the collection namespace to prevent collisions.",
+        "cascade": "preference",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "**Always structure your Ansible content into roles and collections.** Roles encapsulate specific functionalities, while collections group related roles, modules, and plugins, promoting reusability and discoverability.",
+        "cascade": "preference",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "**Booleans:** Standardize on `true`/`false`.",
+        "cascade": "preference",
+        "jev": "constraint",
+        "stage": "encoder"
+      },
+      {
+        "text": "**Bundle Size Optimization:** Keep Worker bundles as small as possible. Tree-shake dependencies aggressively.",
+        "cascade": "preference",
+        "jev": "constraint",
+        "stage": "llm"
+      }
+    ],
+    "belief->episodic": [
+      {
+        "text": "\"*.adr.md\"  # Architecture Decision Records",
+        "cascade": "belief",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "\"<REDACTED_IP>={text}\")",
+        "cascade": "belief",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "\"AppPackages\\MyApp_1.0.0.0_x64.msix\"",
+        "cascade": "belief",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "\"Available Quotes\" section shows successfully quoted swappers",
+        "cascade": "belief",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "\"Consumer {WorkerId}: error processing {ItemId}\",",
+        "cascade": "belief",
+        "jev": "episodic",
+        "stage": "llm"
+      }
+    ],
+    "procedural->constraint": [
+      {
+        "text": "\"Fix any deviations from AECS vocabulary and structure. Ensure content follows Subject→Path→Stage→Concept→Exercise hierarchy for Go programming.\"",
+        "cascade": "procedural",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "\"Implement working Go code that demonstrates [single concept] through practical application. Ensure the Exercise produces tangible results and follows Go best practices.\"",
+        "cascade": "procedural",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "\"Restructure this content to enforce Exercise Primacy by ensuring learners immediately engage in hands-on Go programming. Verify single-concept atomicity.\"",
+        "cascade": "procedural",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "$this->expectExceptionMessage('Division by zero');",
+        "cascade": "procedural",
+        "jev": "constraint",
+        "stage": "llm"
+      },
+      {
+        "text": "$this->expectExceptionMessage('Invalid operation');",
+        "cascade": "procedural",
+        "jev": "constraint",
+        "stage": "llm"
+      }
+    ],
+    "procedural->episodic": [
+      {
+        "text": "\"args\": [\"/absolute/path/to/server.php\"]",
+        "cascade": "procedural",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "\"email\": body.get(\"email\"),",
+        "cascade": "procedural",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "\"name\": body.get(\"name\"),",
+        "cascade": "procedural",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "$result = $this->tool->greet('World');",
+        "cascade": "procedural",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "$result = $this->tool->performCalculation(10, 2, 'divide');",
+        "cascade": "procedural",
+        "jev": "episodic",
+        "stage": "llm"
+      }
+    ],
+    "belief->preference": [
+      {
+        "text": "\"*.puml\"    # PlantUML diagrams",
+        "cascade": "belief",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "\"technology stack decisions\"",
+        "cascade": "belief",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "**Admin Interface**: Separate Filament admin panel for backend management",
+        "cascade": "belief",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "**Alerts**: Non-disruptive toast notifications (`.toast`) + video border glow (`.video-alert`)",
+        "cascade": "belief",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "**Badges**: \"Lowest Gas\"",
+        "cascade": "belief",
+        "jev": "preference",
+        "stage": "llm"
+      }
+    ],
+    "preference->procedural": [
+      {
+        "text": "\"\"\"Decorator to track request metrics.\"\"\"",
+        "cascade": "preference",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Debug Verbosity:** Use the `ansible.builtin.debug` module with verbosity levels for controlled output.",
+        "cascade": "preference",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Lazy Loading Screens:** For large apps, lazy load screens with `React.lazy` and `Suspense`.",
+        "cascade": "preference",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Previous variable declarations**: Replace with comments like `// Method 1: var declaration with type (from Step 1)`",
+        "cascade": "preference",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Prisma Optimization:** For ORMs, use Prisma with `engineType: \"client\"` and an edge-compatible driver adapter. This avoids large Rust binaries.",
+        "cascade": "preference",
+        "jev": "procedural",
+        "stage": "llm"
+      }
+    ],
+    "constraint->procedural": [
+      {
+        "text": "**Backend to Frontend**:",
+        "cascade": "constraint",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Data access**: `$input.item` or `$item`",
+        "cascade": "constraint",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Frontend to Backend**:",
+        "cascade": "constraint",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Input Sanitization:** Prevent SQL injection by using Spring Data JPA or parameterized queries. Prevent Cross-Site Scripting (XSS) by properly encoding output.",
+        "cascade": "constraint",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "**Integration Testing (Miniflare):** Use `Miniflare` for local emulation of the Workers runtime, including bindings (KV, D1, R2). This is critical for testing Worker logic with dependencies.",
+        "cascade": "constraint",
+        "jev": "procedural",
+        "stage": "regex"
+      }
+    ],
+    "procedural->preference": [
+      {
+        "text": "**Monorepos:** For projects with multiple Workers or Pages apps, use `pnpm` or `yarn workspaces`.",
+        "cascade": "procedural",
+        "jev": "preference",
+        "stage": "regex"
+      },
+      {
+        "text": "**Profiles:** Use Spring Profiles (`application-dev.yml`, `application-prod.yml`) to manage environment-specific configurations.",
+        "cascade": "procedural",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "**Projections:** Use DTO projections to fetch only the necessary data from the database.",
+        "cascade": "procedural",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "// Good: Pass plain object",
+        "cascade": "procedural",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "1. Project to containerize:",
+        "cascade": "procedural",
+        "jev": "preference",
+        "stage": "llm"
+      }
+    ],
+    "procedural->belief": [
+      {
+        "text": "**Registry**: Verdaccio (local npm registry for testing publish)",
+        "cascade": "procedural",
+        "jev": "belief",
+        "stage": "regex"
+      },
+      {
+        "text": "**Vite** build tool",
+        "cascade": "procedural",
+        "jev": "belief",
+        "stage": "encoder"
+      },
+      {
+        "text": "**`useCallback` and `useMemo`:** Memoize functions and values passed to `React.memo` components or expensive computations.",
+        "cascade": "procedural",
+        "jev": "belief",
+        "stage": "llm"
+      },
+      {
+        "text": ".isInstanceOf(UserNotFoundException.class)",
+        "cascade": "procedural",
+        "jev": "belief",
+        "stage": "llm"
+      },
+      {
+        "text": "// ✅ CORRECT: Safe access with optional chaining",
+        "cascade": "procedural",
+        "jev": "belief",
+        "stage": "llm"
+      }
+    ],
+    "preference->belief": [
+      {
+        "text": "**Badges**: \"Best Rate\"",
+        "cascade": "preference",
+        "jev": "belief",
+        "stage": "llm"
+      },
+      {
+        "text": "**Badges**: \"Best Rate\", \"Fastest\"",
+        "cascade": "preference",
+        "jev": "belief",
+        "stage": "llm"
+      },
+      {
+        "text": "**Complete data access patterns**",
+        "cascade": "preference",
+        "jev": "belief",
+        "stage": "llm"
+      },
+      {
+        "text": "**Note**: Significantly lower gas costs",
+        "cascade": "preference",
+        "jev": "belief",
+        "stage": "llm"
+      },
+      {
+        "text": "**Purpose**: Reference for AI agents working on the Rusty Commit codebase.",
+        "cascade": "preference",
+        "jev": "belief",
+        "stage": "llm"
+      }
+    ],
+    "preference->episodic": [
+      {
+        "text": "\"major architectural changes\"",
+        "cascade": "preference",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "// ❌ Before refactoring (not testable)",
+        "cascade": "preference",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "API impact notes for public-facing changes.",
+        "cascade": "preference",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "Commits: `feat:` / `fix:` / `test:` / `refactor:` + `Co-Authored-By: Claude <<REDACTED_EMAIL>>`",
+        "cascade": "preference",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "Design work (architecture, UI/UX, data models)",
+        "cascade": "preference",
+        "jev": "episodic",
+        "stage": "llm"
+      }
+    ],
+    "constraint->episodic": [
+      {
+        "text": "**No quotes provided (8)**:",
+        "cascade": "constraint",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "// Channel full -- item was dropped; track overflow metric",
+        "cascade": "constraint",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "1. **Acceptance criteria** checklist in the task file is fully checked (all `- [ ]` changed to `- [x]`).",
+        "cascade": "constraint",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "2. **Empty code / missing return**",
+        "cascade": "constraint",
+        "jev": "episodic",
+        "stage": "llm"
+      },
+      {
+        "text": "5. **Incorrect return format**",
+        "cascade": "constraint",
+        "jev": "episodic",
+        "stage": "llm"
+      }
+    ],
+    "constraint->belief": [
+      {
+        "text": "**CRITICAL**: `jest.clearAllMocks()` does NOT reset `mockImplementation()` -- only clears call history. If tests override `mockImplementation`, subsequent tests inherit the override. Fix: explicitly restore default mock implementations in `beforeEach`, or use `jest.restoreAllMocks()` (which only works with `jest.spyOn`). For `jest.mock()` factories, must manually re-apply defaults.",
+        "cascade": "constraint",
+        "jev": "belief",
+        "stage": "regex"
+      },
+      {
+        "text": "**Commands auto-register** - files in `app/Console/Commands/` are automatically available and do not require manual registration.",
+        "cascade": "constraint",
+        "jev": "belief",
+        "stage": "regex"
+      },
+      {
+        "text": "**Important Discovery**: Swapper availability is **pair-dependent**, not just chain-dependent. Both Relay and NEAR Intents support some same-chain swaps depending on the specific token pair.",
+        "cascade": "constraint",
+        "jev": "belief",
+        "stage": "regex"
+      },
+      {
+        "text": "**Wallet**: Native wallet \"awdaw\" (password: qwerty123)",
+        "cascade": "constraint",
+        "jev": "belief",
+        "stage": "llm"
+      },
+      {
+        "text": "// WRONG — constructor never throws, catch never activates",
+        "cascade": "constraint",
+        "jev": "belief",
+        "stage": "regex"
+      }
+    ],
+    "constraint->preference": [
+      {
+        "text": "Be concise in your explanations - focus on what's important rather than explaining obvious details.",
+        "cascade": "constraint",
+        "jev": "preference",
+        "stage": "regex"
+      },
+      {
+        "text": "In a section called DESIRED AUDIENCE ACTION, give a set of 10, 10-word bullets of politically-oriented actions the speaker(s) actually want to occur as a result of audience hearing and absorbing the HIDDEN MESSAGE. These should be tangible and real-world, e.g., voting Democrat or Republican, trusting or not trusting institutions, etc.",
+        "cascade": "constraint",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "Prefer PHPDoc blocks over comments. Never use comments within the code itself unless there is something _very_ complex going on.",
+        "cascade": "constraint",
+        "jev": "preference",
+        "stage": "regex"
+      },
+      {
+        "text": "Prefer PHPDoc blocks over inline comments. Never use comments within the code itself unless the logic is exceptionally complex.",
+        "cascade": "constraint",
+        "jev": "preference",
+        "stage": "regex"
+      },
+      {
+        "text": "SwiftUI state management (iOS/macOS): prefer the `Observation` framework (`<REDACTED_USER>`, `<REDACTED_USER>`) over `ObservableObject`/`<REDACTED_USER>`; don’t introduce new `ObservableObject` unless required for compatibility, and migrate existing usages when touching related code.",
+        "cascade": "constraint",
+        "jev": "preference",
+        "stage": "regex"
+      }
+    ],
+    "episodic->procedural": [
+      {
+        "text": "Chained multiple browser actions in single message for speed",
+        "cascade": "episodic",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "`// Database connection logic from Step 2`",
+        "cascade": "episodic",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "`// Error handling middleware from previous implementation`",
+        "cascade": "episodic",
+        "jev": "procedural",
+        "stage": "llm"
+      },
+      {
+        "text": "`// Package imports and variable declarations from Steps 1-2`",
+        "cascade": "episodic",
+        "jev": "procedural",
+        "stage": "llm"
+      }
+    ],
+    "episodic->preference": [
+      {
+        "text": "<uap:VisualElements DisplayName=\"My App\"",
+        "cascade": "episodic",
+        "jev": "preference",
+        "stage": "llm"
+      },
+      {
+        "text": "Streamlined from 66 to 10 essential keybindings with tier system:",
+        "cascade": "episodic",
+        "jev": "preference",
+        "stage": "llm"
+      }
+    ],
+    "episodic->belief": [
+      {
+        "text": "echo \"Current project structure:\"",
+        "cascade": "episodic",
+        "jev": "belief",
+        "stage": "llm"
+      }
+    ]
+  },
+  "budget_audit": {
+    "n": 50,
+    "exact_exceeds_budget": 49,
+    "fallback_matches_raw_chars": 12,
+    "median_exact_tokens_to_budget": 2.773,
+    "median_pinned_tokens_to_budget": 6.276,
+    "median_fallback_chars_to_budget": 7.076,
+    "cases": [
+      {
+        "config": "sample-0271-other.md",
+        "budget": 161,
+        "exact_tokens": 142,
+        "exact_chars": 677,
+        "pinned_tokens": 1019,
+        "pinned_chars": 5150,
+        "exact_count": 8,
+        "procedure_count": 23,
+        "unsafe_by_exact_tokens": false,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 746,
+        "scored_chars": 644
+      },
+      {
+        "config": "sample-0040-claude.md",
+        "budget": 64,
+        "exact_tokens": 93,
+        "exact_chars": 352,
+        "pinned_tokens": 271,
+        "pinned_chars": 1046,
+        "exact_count": 4,
+        "procedure_count": 9,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 1046,
+        "scored_chars": 256
+      },
+      {
+        "config": "sample-0187-claude.md",
+        "budget": 201,
+        "exact_tokens": 483,
+        "exact_chars": 2002,
+        "pinned_tokens": 1357,
+        "pinned_chars": 5890,
+        "exact_count": 33,
+        "procedure_count": 71,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 5963,
+        "scored_chars": 804
+      },
+      {
+        "config": "sample-0223-claude.md",
+        "budget": 124,
+        "exact_tokens": 480,
+        "exact_chars": 2534,
+        "pinned_tokens": 921,
+        "pinned_chars": 4589,
+        "exact_count": 33,
+        "procedure_count": 28,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 4517,
+        "scored_chars": 496
+      },
+      {
+        "config": "sample-0298-other.md",
+        "budget": 95,
+        "exact_tokens": 411,
+        "exact_chars": 1844,
+        "pinned_tokens": 642,
+        "pinned_chars": 2903,
+        "exact_count": 17,
+        "procedure_count": 8,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 3192,
+        "scored_chars": 380
+      },
+      {
+        "config": "sample-0081-other.md",
+        "budget": 183,
+        "exact_tokens": 642,
+        "exact_chars": 2799,
+        "pinned_tokens": 1347,
+        "pinned_chars": 6003,
+        "exact_count": 51,
+        "procedure_count": 75,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 6013,
+        "scored_chars": 732
+      },
+      {
+        "config": "sample-0091-agents.md",
+        "budget": 64,
+        "exact_tokens": 242,
+        "exact_chars": 996,
+        "pinned_tokens": 371,
+        "pinned_chars": 1510,
+        "exact_count": 18,
+        "procedure_count": 9,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 1518,
+        "scored_chars": 256
+      },
+      {
+        "config": "sample-0127-claude.md",
+        "budget": 329,
+        "exact_tokens": 729,
+        "exact_chars": 3359,
+        "pinned_tokens": 1666,
+        "pinned_chars": 8959,
+        "exact_count": 44,
+        "procedure_count": 46,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 8874,
+        "scored_chars": 1316
+      },
+      {
+        "config": "sample-0139-other.md",
+        "budget": 224,
+        "exact_tokens": 493,
+        "exact_chars": 2051,
+        "pinned_tokens": 1459,
+        "pinned_chars": 5993,
+        "exact_count": 31,
+        "procedure_count": 58,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 6138,
+        "scored_chars": 896
+      },
+      {
+        "config": "sample-0128-claude.md",
+        "budget": 69,
+        "exact_tokens": 138,
+        "exact_chars": 553,
+        "pinned_tokens": 287,
+        "pinned_chars": 1172,
+        "exact_count": 8,
+        "procedure_count": 10,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 1007,
+        "scored_chars": 276
+      },
+      {
+        "config": "sample-0086-other.md",
+        "budget": 195,
+        "exact_tokens": 316,
+        "exact_chars": 1483,
+        "pinned_tokens": 1303,
+        "pinned_chars": 6174,
+        "exact_count": 21,
+        "procedure_count": 104,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 6264,
+        "scored_chars": 780
+      },
+      {
+        "config": "sample-0216-claude.md",
+        "budget": 166,
+        "exact_tokens": 298,
+        "exact_chars": 979,
+        "pinned_tokens": 735,
+        "pinned_chars": 2664,
+        "exact_count": 19,
+        "procedure_count": 37,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 2610,
+        "scored_chars": 664
+      },
+      {
+        "config": "sample-0021-copilot.md",
+        "budget": 120,
+        "exact_tokens": 406,
+        "exact_chars": 1737,
+        "pinned_tokens": 802,
+        "pinned_chars": 3418,
+        "exact_count": 23,
+        "procedure_count": 29,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 3418,
+        "scored_chars": 480
+      },
+      {
+        "config": "sample-0284-agents.md",
+        "budget": 64,
+        "exact_tokens": 222,
+        "exact_chars": 934,
+        "pinned_tokens": 386,
+        "pinned_chars": 1596,
+        "exact_count": 10,
+        "procedure_count": 11,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 1596,
+        "scored_chars": 256
+      },
+      {
+        "config": "sample-0050-system-prompt.md",
+        "budget": 86,
+        "exact_tokens": 157,
+        "exact_chars": 754,
+        "pinned_tokens": 363,
+        "pinned_chars": 1721,
+        "exact_count": 9,
+        "procedure_count": 5,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 1721,
+        "scored_chars": 344
+      },
+      {
+        "config": "sample-0309-agents.md",
+        "budget": 64,
+        "exact_tokens": 216,
+        "exact_chars": 1040,
+        "pinned_tokens": 344,
+        "pinned_chars": 1558,
+        "exact_count": 9,
+        "procedure_count": 8,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 1656,
+        "scored_chars": 256
+      },
+      {
+        "config": "sample-0023-copilot.md",
+        "budget": 200,
+        "exact_tokens": 789,
+        "exact_chars": 3898,
+        "pinned_tokens": 1389,
+        "pinned_chars": 6609,
+        "exact_count": 66,
+        "procedure_count": 55,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 6736,
+        "scored_chars": 800
+      },
+      {
+        "config": "sample-0178-agents.md",
+        "budget": 350,
+        "exact_tokens": 1409,
+        "exact_chars": 7074,
+        "pinned_tokens": 2514,
+        "pinned_chars": 12132,
+        "exact_count": 67,
+        "procedure_count": 37,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 12208,
+        "scored_chars": 1400
+      },
+      {
+        "config": "sample-0012-agents.md",
+        "budget": 85,
+        "exact_tokens": 432,
+        "exact_chars": 2019,
+        "pinned_tokens": 712,
+        "pinned_chars": 3134,
+        "exact_count": 24,
+        "procedure_count": 13,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 3134,
+        "scored_chars": 340
+      },
+      {
+        "config": "sample-0252-agents.md",
+        "budget": 80,
+        "exact_tokens": 496,
+        "exact_chars": 2771,
+        "pinned_tokens": 537,
+        "pinned_chars": 3007,
+        "exact_count": 37,
+        "procedure_count": 3,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 3080,
+        "scored_chars": 320
+      },
+      {
+        "config": "sample-0035-cursorrules.md",
+        "budget": 168,
+        "exact_tokens": 670,
+        "exact_chars": 2999,
+        "pinned_tokens": 1387,
+        "pinned_chars": 5813,
+        "exact_count": 35,
+        "procedure_count": 68,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 5760,
+        "scored_chars": 672
+      },
+      {
+        "config": "sample-0190-agents.md",
+        "budget": 367,
+        "exact_tokens": 1828,
+        "exact_chars": 7859,
+        "pinned_tokens": 3003,
+        "pinned_chars": 12561,
+        "exact_count": 62,
+        "procedure_count": 32,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 12602,
+        "scored_chars": 1468
+      },
+      {
+        "config": "sample-0131-other.md",
+        "budget": 317,
+        "exact_tokens": 1006,
+        "exact_chars": 4891,
+        "pinned_tokens": 2239,
+        "pinned_chars": 10704,
+        "exact_count": 54,
+        "procedure_count": 74,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 10552,
+        "scored_chars": 1268
+      },
+      {
+        "config": "sample-0181-claude.md",
+        "budget": 135,
+        "exact_tokens": 152,
+        "exact_chars": 657,
+        "pinned_tokens": 753,
+        "pinned_chars": 3457,
+        "exact_count": 11,
+        "procedure_count": 57,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 3457,
+        "scored_chars": 540
+      },
+      {
+        "config": "sample-0027-copilot.md",
+        "budget": 126,
+        "exact_tokens": 280,
+        "exact_chars": 1290,
+        "pinned_tokens": 784,
+        "pinned_chars": 3544,
+        "exact_count": 8,
+        "procedure_count": 21,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 3698,
+        "scored_chars": 504
+      },
+      {
+        "config": "sample-0308-agents.md",
+        "budget": 76,
+        "exact_tokens": 324,
+        "exact_chars": 1825,
+        "pinned_tokens": 463,
+        "pinned_chars": 2441,
+        "exact_count": 23,
+        "procedure_count": 11,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 2441,
+        "scored_chars": 304
+      },
+      {
+        "config": "sample-0189-claude.md",
+        "budget": 186,
+        "exact_tokens": 428,
+        "exact_chars": 2120,
+        "pinned_tokens": 1030,
+        "pinned_chars": 4828,
+        "exact_count": 31,
+        "procedure_count": 49,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 4727,
+        "scored_chars": 744
+      },
+      {
+        "config": "sample-0101-claude.md",
+        "budget": 226,
+        "exact_tokens": 1294,
+        "exact_chars": 5287,
+        "pinned_tokens": 1593,
+        "pinned_chars": 6490,
+        "exact_count": 57,
+        "procedure_count": 18,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 6501,
+        "scored_chars": 904
+      },
+      {
+        "config": "sample-0134-other.md",
+        "budget": 226,
+        "exact_tokens": 414,
+        "exact_chars": 1811,
+        "pinned_tokens": 1277,
+        "pinned_chars": 5735,
+        "exact_count": 39,
+        "procedure_count": 70,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 5732,
+        "scored_chars": 904
+      },
+      {
+        "config": "sample-0219-claude.md",
+        "budget": 100,
+        "exact_tokens": 444,
+        "exact_chars": 1803,
+        "pinned_tokens": 801,
+        "pinned_chars": 3135,
+        "exact_count": 26,
+        "procedure_count": 26,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 3060,
+        "scored_chars": 400
+      },
+      {
+        "config": "sample-0165-agents.md",
+        "budget": 64,
+        "exact_tokens": 75,
+        "exact_chars": 362,
+        "pinned_tokens": 166,
+        "pinned_chars": 752,
+        "exact_count": 5,
+        "procedure_count": 8,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 752,
+        "scored_chars": 256
+      },
+      {
+        "config": "sample-0135-other.md",
+        "budget": 208,
+        "exact_tokens": 258,
+        "exact_chars": 1416,
+        "pinned_tokens": 1247,
+        "pinned_chars": 6063,
+        "exact_count": 18,
+        "procedure_count": 82,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 5846,
+        "scored_chars": 832
+      },
+      {
+        "config": "sample-0164-agents.md",
+        "budget": 205,
+        "exact_tokens": 577,
+        "exact_chars": 2169,
+        "pinned_tokens": 1027,
+        "pinned_chars": 3986,
+        "exact_count": 29,
+        "procedure_count": 26,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 4042,
+        "scored_chars": 820
+      },
+      {
+        "config": "sample-0066-other.md",
+        "budget": 241,
+        "exact_tokens": 290,
+        "exact_chars": 1240,
+        "pinned_tokens": 1459,
+        "pinned_chars": 6547,
+        "exact_count": 28,
+        "procedure_count": 116,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 6450,
+        "scored_chars": 964
+      },
+      {
+        "config": "sample-0030-cursorrules.md",
+        "budget": 174,
+        "exact_tokens": 627,
+        "exact_chars": 2705,
+        "pinned_tokens": 1204,
+        "pinned_chars": 5113,
+        "exact_count": 38,
+        "procedure_count": 40,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 5200,
+        "scored_chars": 696
+      },
+      {
+        "config": "sample-0307-agents.md",
+        "budget": 116,
+        "exact_tokens": 256,
+        "exact_chars": 1088,
+        "pinned_tokens": 657,
+        "pinned_chars": 2611,
+        "exact_count": 18,
+        "procedure_count": 29,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 2659,
+        "scored_chars": 464
+      },
+      {
+        "config": "sample-0243-other.md",
+        "budget": 365,
+        "exact_tokens": 954,
+        "exact_chars": 3775,
+        "pinned_tokens": 1338,
+        "pinned_chars": 5560,
+        "exact_count": 66,
+        "procedure_count": 33,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 5553,
+        "scored_chars": 1460
+      },
+      {
+        "config": "sample-0294-other.md",
+        "budget": 192,
+        "exact_tokens": 576,
+        "exact_chars": 2547,
+        "pinned_tokens": 1286,
+        "pinned_chars": 5647,
+        "exact_count": 38,
+        "procedure_count": 65,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 5731,
+        "scored_chars": 768
+      },
+      {
+        "config": "sample-0063-other.md",
+        "budget": 279,
+        "exact_tokens": 534,
+        "exact_chars": 2092,
+        "pinned_tokens": 2314,
+        "pinned_chars": 9286,
+        "exact_count": 44,
+        "procedure_count": 159,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 9387,
+        "scored_chars": 1116
+      },
+      {
+        "config": "sample-0246-other.md",
+        "budget": 189,
+        "exact_tokens": 550,
+        "exact_chars": 2282,
+        "pinned_tokens": 891,
+        "pinned_chars": 3613,
+        "exact_count": 21,
+        "procedure_count": 14,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 3747,
+        "scored_chars": 756
+      },
+      {
+        "config": "sample-0037-cursorrules.md",
+        "budget": 145,
+        "exact_tokens": 396,
+        "exact_chars": 1800,
+        "pinned_tokens": 955,
+        "pinned_chars": 4139,
+        "exact_count": 23,
+        "procedure_count": 44,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 4139,
+        "scored_chars": 580
+      },
+      {
+        "config": "sample-0209-other.md",
+        "budget": 139,
+        "exact_tokens": 349,
+        "exact_chars": 1332,
+        "pinned_tokens": 1073,
+        "pinned_chars": 4441,
+        "exact_count": 31,
+        "procedure_count": 69,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 4323,
+        "scored_chars": 556
+      },
+      {
+        "config": "sample-0069-other.md",
+        "budget": 88,
+        "exact_tokens": 334,
+        "exact_chars": 1469,
+        "pinned_tokens": 628,
+        "pinned_chars": 2742,
+        "exact_count": 24,
+        "procedure_count": 30,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 2497,
+        "scored_chars": 352
+      },
+      {
+        "config": "sample-0126-claude.md",
+        "budget": 64,
+        "exact_tokens": 121,
+        "exact_chars": 489,
+        "pinned_tokens": 304,
+        "pinned_chars": 1154,
+        "exact_count": 8,
+        "procedure_count": 11,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 1154,
+        "scored_chars": 256
+      },
+      {
+        "config": "sample-0304-agents.md",
+        "budget": 106,
+        "exact_tokens": 249,
+        "exact_chars": 1194,
+        "pinned_tokens": 406,
+        "pinned_chars": 1898,
+        "exact_count": 8,
+        "procedure_count": 7,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 1898,
+        "scored_chars": 424
+      },
+      {
+        "config": "sample-0058-system-prompt.md",
+        "budget": 76,
+        "exact_tokens": 236,
+        "exact_chars": 1098,
+        "pinned_tokens": 398,
+        "pinned_chars": 1907,
+        "exact_count": 25,
+        "procedure_count": 10,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 1940,
+        "scored_chars": 304
+      },
+      {
+        "config": "sample-0120-claude.md",
+        "budget": 287,
+        "exact_tokens": 1149,
+        "exact_chars": 5662,
+        "pinned_tokens": 1922,
+        "pinned_chars": 9212,
+        "exact_count": 62,
+        "procedure_count": 29,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 9131,
+        "scored_chars": 1148
+      },
+      {
+        "config": "sample-0013-agents.md",
+        "budget": 89,
+        "exact_tokens": 242,
+        "exact_chars": 1008,
+        "pinned_tokens": 444,
+        "pinned_chars": 1841,
+        "exact_count": 13,
+        "procedure_count": 12,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 2060,
+        "scored_chars": 356
+      },
+      {
+        "config": "sample-0085-other.md",
+        "budget": 171,
+        "exact_tokens": 435,
+        "exact_chars": 1719,
+        "pinned_tokens": 1172,
+        "pinned_chars": 4735,
+        "exact_count": 41,
+        "procedure_count": 79,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": false,
+        "raw_chars": 4761,
+        "scored_chars": 684
+      },
+      {
+        "config": "sample-0119-agents.md",
+        "budget": 64,
+        "exact_tokens": 271,
+        "exact_chars": 1295,
+        "pinned_tokens": 322,
+        "pinned_chars": 1525,
+        "exact_count": 8,
+        "procedure_count": 4,
+        "unsafe_by_exact_tokens": true,
+        "fallback_equals_record_raw_chars": true,
+        "raw_chars": 1525,
+        "scored_chars": 256
+      }
+    ]
+  },
+  "labeling_usage_this_invocation": {
+    "new_calls": 4873,
+    "new_input_tokens": 3605743,
+    "estimated_usd": 0.151441,
+    "model": "jev-1.13.0",
+    "distinct_lines": 4873
+  },
+  "created_at_utc": "2026-09-30T01:10:19.351756+00:00"
+}

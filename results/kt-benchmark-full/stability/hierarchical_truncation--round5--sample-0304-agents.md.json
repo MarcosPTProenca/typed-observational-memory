@@ -1,0 +1,1 @@
+{"arm": "hierarchical_truncation", "config": "sample-0304-agents.md", "round": 5, "budget": 64, "raw_chars": 92, "overshoot": false, "cost_usd": 0.0, "latency_s": 0.0, "c_recall": 0.0, "output_text": "This document provides guidance for AI agents contributing to the `umami-kotlin` repository."}

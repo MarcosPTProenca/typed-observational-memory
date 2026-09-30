@@ -1,0 +1,1 @@
+{"arm": "hierarchical_truncation", "config": "sample-0131-other.md", "round": 5, "budget": 73, "raw_chars": 170, "overshoot": false, "cost_usd": 0.0, "latency_s": 0.0, "c_recall": 0.0, "output_text": "name: containerize-aspnet-framework\ndescription: 'Containerize an ASP.NET .NET Framework project by creating Dockerfile and .dockerfile files customized for the project.'"}

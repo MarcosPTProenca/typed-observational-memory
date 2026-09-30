@@ -1,0 +1,1 @@
+{"arm": "vanilla:gpt-6-luna", "config": "sample-0298-other.md", "round": 5, "budget": 64, "raw_chars": 26, "overshoot": false, "cost_usd": 3.180000000002625e-05, "c_recall": 0.0, "output_text": "No configuration provided."}

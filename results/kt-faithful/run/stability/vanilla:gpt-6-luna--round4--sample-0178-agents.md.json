@@ -1,0 +1,1 @@
+{"arm": "vanilla:gpt-6-luna", "config": "sample-0178-agents.md", "round": 4, "budget": 205, "raw_chars": 0, "overshoot": false, "cost_usd": 0.0006593000000000293, "c_recall": 0.0, "output_text": ""}

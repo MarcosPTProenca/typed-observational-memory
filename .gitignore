@@ -1,0 +1,20 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.sqlite
+# Third-party benchmark downloads (URLs and SHA-256 in data/README.md)
+data/locomo10.json
+data/longmemeval_s_cleaned.json
+# Generated / local runtime state
+graphify-out/
+.pi/tasks/
+.pi/typed-memory.json
+*:Zone.Identifier
+# LaTeX build outputs
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out

@@ -1,0 +1,77 @@
+{
+  "n_configs": 30,
+  "excluded": [],
+  "per_ratio": {
+    "0.5": {
+      "strategies": {
+        "tom:gpt-6-luna": {
+          "per_type_mean": {
+            "constraint": 0.7795,
+            "procedural": 0.8045,
+            "belief": 0.5473,
+            "preference": 0.6807,
+            "episodic": 0.7692
+          },
+          "n_completed": 30,
+          "overshoot_rate": 0.9,
+          "cost_usd": 0.1045
+        },
+        "tom_budget:gpt-6-luna": {
+          "per_type_mean": {
+            "constraint": 0.7405,
+            "procedural": 0.8046,
+            "belief": 0.5515,
+            "preference": 0.6261,
+            "episodic": 0.8462
+          },
+          "n_completed": 30,
+          "overshoot_rate": 0.833,
+          "cost_usd": 0.1066
+        },
+        "tom_jev_budget:gpt-6-luna": {
+          "per_type_mean": {
+            "constraint": 0.7522,
+            "procedural": 0.8583,
+            "belief": 0.589,
+            "preference": 0.717,
+            "episodic": 0.8297
+          },
+          "n_completed": 30,
+          "overshoot_rate": 0.8,
+          "cost_usd": 0.1383
+        },
+        "vanilla:gpt-6-luna": {
+          "per_type_mean": {
+            "constraint": 0.4571,
+            "procedural": 0.7944,
+            "belief": 0.6517,
+            "preference": 0.7928,
+            "episodic": 0.9176
+          },
+          "n_completed": 30,
+          "overshoot_rate": 0.567,
+          "cost_usd": 0.0273
+        },
+        "TypeCompact": {
+          "per_type_mean": {
+            "constraint": 0.9944,
+            "procedural": 0.9617,
+            "belief": 0.469,
+            "preference": 0.5617,
+            "episodic": 0.8462
+          },
+          "n_completed": 30
+        }
+      }
+    }
+  },
+  "per_strategy": {
+    "TypeCompact": {
+      "round_1_c_recall": 0.9944,
+      "round_2_c_recall": 0.9798,
+      "round_3_c_recall": 0.978,
+      "round_4_c_recall": 0.978,
+      "round_5_c_recall": 0.978
+    }
+  }
+}

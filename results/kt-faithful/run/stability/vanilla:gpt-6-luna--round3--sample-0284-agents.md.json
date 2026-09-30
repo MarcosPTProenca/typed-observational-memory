@@ -1,0 +1,1 @@
+{"arm": "vanilla:gpt-6-luna", "config": "sample-0284-agents.md", "round": 3, "budget": 64, "raw_chars": 42, "overshoot": false, "cost_usd": 5.8400000000013996e-05, "c_recall": 0.0, "output_text": "No configuration was provided to compress."}

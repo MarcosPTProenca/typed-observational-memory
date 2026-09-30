@@ -1,0 +1,1 @@
+{"arm": "hierarchical_truncation", "config": "sample-0181-claude.md", "round": 4, "budget": 81, "raw_chars": 102, "overshoot": false, "cost_usd": 0.0, "latency_s": 0.0, "c_recall": 0.3333333333333333, "output_text": "This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository."}

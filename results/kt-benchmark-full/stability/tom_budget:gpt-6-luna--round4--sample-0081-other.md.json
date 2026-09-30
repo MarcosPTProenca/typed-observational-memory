@@ -1,0 +1,1 @@
+{"arm": "tom_budget:gpt-6-luna", "config": "sample-0081-other.md", "round": 4, "budget": 64, "raw_chars": 51, "overshoot": false, "cost_usd": 0.0003414999999999946, "latency_s": 5.164, "c_recall": 0.05555555555555555, "output_text": "Procedures:\nUse specific, appropriate exception typ"}

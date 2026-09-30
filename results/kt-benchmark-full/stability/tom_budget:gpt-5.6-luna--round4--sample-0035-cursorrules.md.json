@@ -1,0 +1,1 @@
+{"arm": "tom_budget:gpt-5.6-luna", "config": "sample-0035-cursorrules.md", "round": 4, "budget": 105, "raw_chars": 88, "overshoot": false, "cost_usd": 0.0008695999999996928, "latency_s": 4.915, "c_recall": 0.0, "output_text": "Constraints:\n**Adopt consistent `snake_case` naming.** This applies to variables, tasks,"}

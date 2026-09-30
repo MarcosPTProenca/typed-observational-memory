@@ -1,0 +1,1 @@
+{"arm": "hierarchical_truncation", "config": "sample-0101-claude.md", "round": 5, "budget": 67, "raw_chars": 104, "overshoot": false, "cost_usd": 0.0, "latency_s": 0.0, "c_recall": 0.0, "output_text": "<!-- nx configuration start-->\n<!-- Leave the start & end comments to automatically receive updates. -->"}
