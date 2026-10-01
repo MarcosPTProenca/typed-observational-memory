@@ -9,6 +9,7 @@ type BridgeResponse = { ok: boolean; text?: string; error?: string };
 
 const DB = ".pi/tom-memory.sqlite";
 const BUDGET = Number(process.env.PI_TOM_CONTEXT_BUDGET ?? 2048);
+const TIMEOUT_MS = Number(process.env.PI_TOM_TIMEOUT_MS ?? 30000);
 
 function contentOf(content: unknown): string {
 	if (typeof content === "string") return content;
@@ -24,21 +25,38 @@ class PythonBridge {
 	private child: ReturnType<typeof spawn> | undefined;
 	private buffer = "";
 	private busy: Promise<BridgeResponse> = Promise.resolve({ ok: true });
+	private resolve: ((result: BridgeResponse) => void) | undefined;
+	private timer: ReturnType<typeof setTimeout> | undefined;
 
 	constructor(private readonly cwd: string) {}
 
+	// Never rejects: on timeout/exit/bad-output it resolves { ok: false } so a
+	// single failure can't poison the queue or surface as an extension error.
 	call(request: BridgeRequest): Promise<BridgeResponse> {
-		this.busy = this.busy.then(() => new Promise((resolve, reject) => {
+		const run = () => new Promise<BridgeResponse>((resolve) => {
 			if (!this.child) this.start();
 			this.resolve = resolve;
-			this.reject = reject;
-			this.child!.stdin!.write(`${JSON.stringify(request)}\n`);
-		}));
+			this.timer = setTimeout(
+				() => this.settle({ ok: false, error: `TOM bridge timed out after ${TIMEOUT_MS}ms` }),
+				TIMEOUT_MS,
+			);
+			try {
+				this.child!.stdin!.write(`${JSON.stringify(request)}\n`);
+			} catch (error) {
+				this.settle({ ok: false, error: String(error) });
+			}
+		});
+		this.busy = this.busy.then(run, run);
 		return this.busy;
 	}
 
-	private resolve: ((result: BridgeResponse) => void) | undefined;
-	private reject: ((error: Error) => void) | undefined;
+	private settle(result: BridgeResponse) {
+		if (this.timer) clearTimeout(this.timer);
+		this.timer = undefined;
+		const resolve = this.resolve;
+		this.resolve = undefined;
+		resolve?.(result);
+	}
 
 	close() { this.child?.kill(); this.child = undefined; }
 
@@ -50,16 +68,26 @@ class PythonBridge {
 		});
 		this.child.stdout!.on("data", (chunk) => {
 			this.buffer += String(chunk);
-			const end = this.buffer.indexOf("\n");
-			if (end < 0) return;
-			const result = JSON.parse(this.buffer.slice(0, end)) as BridgeResponse;
-			this.buffer = this.buffer.slice(end + 1);
-			if (result.ok) this.resolve?.(result);
-			else this.reject?.(new Error(result.error ?? "TOM bridge failed"));
-			this.resolve = undefined;
-			this.reject = undefined;
+			let end = this.buffer.indexOf("\n");
+			while (end >= 0) {
+				const line = this.buffer.slice(0, end);
+				this.buffer = this.buffer.slice(end + 1);
+				if (line.trim()) {
+					try {
+						this.settle(JSON.parse(line) as BridgeResponse);
+					} catch {
+						this.settle({ ok: false, error: "TOM bridge sent malformed output" });
+					}
+				}
+				end = this.buffer.indexOf("\n");
+			}
 		});
-		this.child.on("error", (error) => this.reject?.(error));
+		this.child.on("error", (error) => this.settle({ ok: false, error: String(error) }));
+		this.child.on("exit", (code) => {
+			this.child = undefined;
+			this.buffer = "";
+			this.settle({ ok: false, error: `TOM bridge exited (${code})` });
+		});
 	}
 }
 
